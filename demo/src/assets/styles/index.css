@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Sono:wght@200..800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* --baseOne: hsl(0, 0%, 100%); */
+    --baseTwo: hsl(240, 60%, 1%);
+    /* --baseThree: hsl(0, 0%, 96%); */
+    --baseFour: hsl(0, 0%, 100%);
+    --accent1: hsl(0, 4%, 89%);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      /* --baseOne: hsl(229, 57%, 11%); */
+      --baseTwo: hsl(0, 0%, 90%);
+      /* --baseThree: hsl(228, 56%, 26%); */
+      --baseFour: hsl(0, 0%, 0%);
+      --accent1: hsl(221, 39%, 11%)
+    }
+  }
+
+  :root[data-theme="dark"] {
+    /* --baseOne: hsl(229, 57%, 11%); */
+    --baseTwo: hsl(0, 0%, 90%);
+    /* --baseThree: hsl(228, 56%, 26%); */
+    --baseFour: hsl(0, 0%, 0%);
+    --accent1: hsl(221, 39%, 11%)
+  }
+
+  :root[data-theme="light"] {
+    /* --baseOne: hsl(0, 0%, 100%); */
+    --baseTwo: hsl(240, 60%, 1%);
+    /* --baseThree: hsl(0, 0%, 96%); */
+    --baseFour: hsl(0, 0%, 100%);
+    --accent1: hsl(0, 4%, 89%);
+  }
+
+  html {
+    /* @apply bg-baseFour scroll-smooth text-baseTwo transition-colors duration-150; */
+    @apply bg-baseFour text-baseTwo transition-all duration-150;
+  }
+
+  body {
+    @apply max-w-[1920px] mx-auto;
+  }
+}
+
+.sono { font-family: "Sono", monospace; }
