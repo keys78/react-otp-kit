@@ -15,7 +15,7 @@ const DarkIcon = () => {
         clip-rule="evenodd"
       ></path>
     </svg>
-  );
+  )
 }
 
 export default DarkIcon

@@ -2,7 +2,7 @@ interface Props {
   size: string
 }
 
-const Logo = ({ size } : Props) => {
+const Logo = ({ size }: Props) => {
   return (
     <svg
       width={size}
@@ -44,7 +44,7 @@ const Logo = ({ size } : Props) => {
         </clipPath>
       </defs>
     </svg>
-  );
+  )
 }
 
 export default Logo

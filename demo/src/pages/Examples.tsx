@@ -1,7 +1,5 @@
 const Examples = () => {
-  return (
-    <div>Examples</div>
-  )
+  return <div>Examples</div>
 }
 
 export default Examples

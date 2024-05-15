@@ -1,51 +1,63 @@
 @import url('https://fonts.googleapis.com/css2?family=Sono:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+JP:wght@100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    /* --baseOne: hsl(0, 0%, 100%); */
-    --baseTwo: hsl(240, 60%, 1%);
-    /* --baseThree: hsl(0, 0%, 96%); */
+    --accent2: hsl(287, 4%, 45%);
+    --accent3: hsl(265, 11%, 22%);
+    --accent4: hsl(0, 0%, 19%);
     --baseFour: hsl(0, 0%, 100%);
-    --accent1: hsl(0, 4%, 89%);
+    --baseTwo: #f9f0f0;
+    --accent1: #f4f4f4;
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      /* --baseOne: hsl(229, 57%, 11%); */
-      --baseTwo: hsl(0, 0%, 90%);
-      /* --baseThree: hsl(228, 56%, 26%); */
+      --accent2: hsl(0, 0%, 90%);
+      --accent3: hsl(0, 0%, 87%);
+      --accent4: hsl(0, 0%, 90%);
       --baseFour: hsl(0, 0%, 0%);
-      --accent1: hsl(221, 39%, 11%)
+      --baseTwo: #150101;
+      --accent1: #0c0c0c;
     }
   }
 
-  :root[data-theme="dark"] {
-    /* --baseOne: hsl(229, 57%, 11%); */
-    --baseTwo: hsl(0, 0%, 90%);
-    /* --baseThree: hsl(228, 56%, 26%); */
+  :root[data-theme='dark'] {
+    --accent2: hsl(0, 0%, 90%);
+    --accent3: hsl(0, 0%, 87%);
+    --accent4: hsl(0, 0%, 90%);
     --baseFour: hsl(0, 0%, 0%);
-    --accent1: hsl(221, 39%, 11%)
+    --baseTwo: #150101;
+    --accent1: #0c0c0c;
   }
 
-  :root[data-theme="light"] {
-    /* --baseOne: hsl(0, 0%, 100%); */
-    --baseTwo: hsl(240, 60%, 1%);
-    /* --baseThree: hsl(0, 0%, 96%); */
+  :root[data-theme='light'] {
+    --accent2: hsl(287, 4%, 45%);
+    --accent3: hsl(265, 11%, 22%);
+    --accent4: hsl(0, 0%, 19%);
     --baseFour: hsl(0, 0%, 100%);
-    --accent1: hsl(0, 4%, 89%);
+    --baseTwo: #f9f0f0;
+    --accent1: #f4f4f4;
   }
 
   html {
-    /* @apply bg-baseFour scroll-smooth text-baseTwo transition-colors duration-150; */
-    @apply bg-baseFour text-baseTwo transition-all duration-150;
+    @apply bg-baseFour text-accent-2 transition-all duration-150;
   }
 
   body {
     @apply max-w-[1920px] mx-auto;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
   }
 }
 
-.sono { font-family: "Sono", monospace; }
+.sono {
+  font-family: 'Sono', monospace;
+}
+.lato {
+  font-family: 'Lato', sans-serif;
+}

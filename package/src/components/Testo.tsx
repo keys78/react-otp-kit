@@ -1,8 +1,8 @@
-import { useState } from "react";
-import CustomOtpKit from "./CustomOtpKit";
+import { useState } from 'react'
+import CustomOtpKit from './CustomOtpKit'
 
 const Testing = () => {
-  const [otp, setOtp] = useState("");
+  const [otp, setOtp] = useState('')
 
   return (
     <div>
@@ -14,23 +14,23 @@ const Testing = () => {
         type="number"
         separator={{
           show: true,
-          value: "*",
+          value: '*',
           intervals: 1,
-          className: "default__styles",
+          className: 'default__styles',
         }}
         autoFocus={{
           isAutoFocused: true,
-          style: { backgroundColor: "yellow" },
+          style: { backgroundColor: 'yellow' },
         }}
         resendButton={{
           initialCountdown: 10,
           show: true,
-          text: "emma", // Specify the text for the resend button
-          className: "Rsend_styles", // Specify the class name for the resend button
+          text: 'emma', // Specify the text for the resend button
+          className: 'Rsend_styles', // Specify the class name for the resend button
         }}
       />
     </div>
-  );
-};
+  )
+}
 
-export default Testing;
+export default Testing

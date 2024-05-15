@@ -1,4 +1,4 @@
-import Testing from './components/Testo';
+import Testing from './components/Testo'
 
 const App = () => {
   return (
@@ -6,12 +6,10 @@ const App = () => {
       <h1>App</h1>
       {/* todo */}
       <p>Verify on Completion feature</p>
-      <p>Either disable other inputs or auto=track empty inputs
-        
-      </p>
+      <p>Either disable other inputs or auto=track empty inputs</p>
       <Testing />
     </div>
-  );
+  )
 }
 
 export default App

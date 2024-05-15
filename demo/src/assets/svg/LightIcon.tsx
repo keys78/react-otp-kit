@@ -66,7 +66,7 @@ const LightIcon = () => {
         stroke-width="4"
       />
     </svg>
-  );
-};
+  )
+}
 
-export default LightIcon;
+export default LightIcon
