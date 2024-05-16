@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, {
   useState,
   useRef,
@@ -7,14 +8,14 @@ import React, {
   ClipboardEvent,
   FormEvent,
 } from 'react'
+import axios from 'axios'
 
 type whiteListInputTypes = 'number' | 'text' | 'password'
 
-interface CustomOtpKitProps {
+interface OtpKitProps {
   value: string
   onChange: (value: string) => void
-  numOfInputs: number
-  //   type:
+  numOfInputs?: number
   placeholder?: string
   separator: {
     show: boolean
@@ -26,32 +27,64 @@ interface CustomOtpKitProps {
     isAutoFocused: boolean
     style: React.CSSProperties
   }
-  resendButton: {
-    initialCountdown: number
-    show: boolean
-    text: string
-    className: string
+  submitOtpButton?: {
+    show?: boolean
+    text?: string
+    className?: string
+  }
+  clearOtpButton?: {
+    show?: boolean
+    text?: string
+    className?: string
   }
   type: whiteListInputTypes
+  autoSubmit: boolean
+  inputStyles?: {
+    generalStyles?: string
+    onFill?: string
+  }
 }
 
-const CustomOtpKit: React.FC<CustomOtpKitProps> = ({
+const OtpKit: React.FC<OtpKitProps> = ({
   onChange,
-  numOfInputs,
+  numOfInputs = 6, // Default value for numOfInputs
   type,
   placeholder,
   separator,
   autoFocus,
-  resendButton,
+  autoSubmit,
+  submitOtpButton,
+  clearOtpButton,
+  inputStyles,
 }) => {
-  const [otp, setOtp] = useState<string[]>(new Array(numOfInputs).fill(''))
-  const [countdown, setCountdown] = useState<number>(
-    resendButton.initialCountdown,
+  const defaultSubmitOtpButton = {
+    show: true,
+    text: 'Submit',
+    className: 'rok__submit_button',
+  }
+  const defaultClearOtpButton = {
+    show: false,
+    text: 'Clear',
+    className: 'rok__clear_button',
+  }
+
+  const finalSubmitOtpCTA = {
+    ...defaultSubmitOtpButton,
+    ...submitOtpButton,
+  }
+  const finalClearOtpCTA = {
+    ...defaultClearOtpButton,
+    ...clearOtpButton,
+  }
+
+  const sanitizedNumOfInputs: number = Math.min(numOfInputs || 6, 100)
+
+  const [otp, setOtp] = useState<string[]>(
+    new Array(sanitizedNumOfInputs).fill(''),
   )
   const [isVerifyDisabled, setIsVerifyDisabled] = useState<boolean>(true)
-  const [isResendDisabled, setIsResendDisabled] = useState<boolean>(true)
   const inputRefs = useRef<Array<HTMLInputElement | null>>(
-    new Array(numOfInputs).fill(null),
+    new Array(sanitizedNumOfInputs).fill(null),
   )
 
   useEffect(() => {
@@ -60,24 +93,13 @@ const CustomOtpKit: React.FC<CustomOtpKitProps> = ({
     }
   }, [autoFocus.isAutoFocused])
 
+  // Auto-submit when all inputs are filled and autoSubmit is enabled
   useEffect(() => {
-    if (countdown === 0) {
-      setIsResendDisabled(false)
-      return
+    setIsVerifyDisabled(otp.some((digit) => digit === ''))
+    if (autoSubmit && !isVerifyDisabled && otp.every((digit) => digit !== '')) {
+      handleSubmit()
     }
-
-    const timer = setInterval(() => {
-      setCountdown((prevCountdown) => {
-        if (prevCountdown === 0) {
-          clearInterval(timer)
-          return 0
-        }
-        return prevCountdown - 1
-      })
-    }, 1000)
-
-    return () => clearInterval(timer)
-  }, [countdown])
+  }, [otp, autoSubmit, isVerifyDisabled])
 
   useEffect(() => {
     setIsVerifyDisabled(otp.some((digit) => digit === ''))
@@ -89,12 +111,16 @@ const CustomOtpKit: React.FC<CustomOtpKitProps> = ({
   ) => {
     const { value } = event.target
     const newOtp = [...otp]
-    newOtp[index] = value.charAt(value.length - 1) // Get the last character entered
+    newOtp[index] = value.charAt(value.length - 1)
     setOtp(newOtp)
     onChange(newOtp.join('')) // Call onChange prop with updated value
 
-    // Focus on the next input field whenever any value is entered into the current input field
-    inputRefs.current[index + 1]?.focus()
+    // Find the next empty input field
+    const nextEmptyIndex = newOtp.findIndex((digit) => digit === '')
+    if (nextEmptyIndex !== -1) {
+      // Focus on the next empty input field
+      inputRefs.current[nextEmptyIndex]?.focus()
+    }
   }
 
   const handleKeyDown = (
@@ -138,7 +164,7 @@ const CustomOtpKit: React.FC<CustomOtpKitProps> = ({
         }
         setOtp(newOtp)
       }
-      event.preventDefault() // Prevent default behavior of adding the character twice
+      event.preventDefault()
     }
   }
 
@@ -172,30 +198,27 @@ const CustomOtpKit: React.FC<CustomOtpKitProps> = ({
     }
   }
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
+  const handleSubmit = (event?: FormEvent<HTMLFormElement>) => {
+    event?.preventDefault()
     const filledOtp = otp.join('')
     console.log('OTP submitted:', filledOtp)
-    handleVerifyClick()
     // Handle OTP verification logic here
   }
 
-  const clearInputs = () => {
-    setOtp(['', '', '', '', '', ''])
+  const handleClearInputs = () => {
+    setOtp(new Array(sanitizedNumOfInputs).fill(''))
     inputRefs.current[0]?.focus()
   }
 
-  const handleVerifyClick = () => {
-    clearInputs()
-  }
+  useEffect(() => {
+    // Find the index of the next empty input field
+    const nextEmptyIndex = otp.findIndex((digit) => digit === '')
 
-  const handleResendClick = () => {
-    if (!isResendDisabled) {
-      setIsResendDisabled(true)
-      setCountdown(resendButton.initialCountdown)
-      handleVerifyClick()
+    // If there is an empty input field, focus on it
+    if (nextEmptyIndex !== -1) {
+      inputRefs.current[nextEmptyIndex]?.focus()
     }
-  }
+  }, [otp])
 
   return (
     <section>
@@ -211,46 +234,159 @@ const CustomOtpKit: React.FC<CustomOtpKitProps> = ({
                 onKeyDown={(e) => handleKeyDown(index, e)}
                 onPaste={handlePaste}
                 maxLength={1}
-                className={`border rounded-md py-2 s-767:w-12 w-10 text-center ${
-                  digit ? 'border-green-500' : ''
-                }`}
+                disabled={index !== 0 && otp[index - 1] === ''}
+                className={`${inputStyles?.generalStyles || 'gen__style'} ${digit ? inputStyles?.onFill || 'komo' : ''}`}
                 ref={(el) => (inputRefs.current[index] = el)}
                 autoComplete="one-time-code"
               />
               {separator.show &&
                 (index + 1) % separator.intervals === 0 &&
-                index !== numOfInputs - 1 && (
+                index !== sanitizedNumOfInputs - 1 && (
                   <div className={separator.className}>{separator.value}</div>
                 )}
             </React.Fragment>
           ))}
         </div>
-        <button
-          className={`bg-greenThree text-white px-4 py-2 rounded-md w-[120px] ${
-            isVerifyDisabled ? 'bg-grayThree cursor-not-allowed' : ''
-          }`}
-          type="submit"
-          disabled={isVerifyDisabled}
-        >
-          Submit
-        </button>
-      </form>
-      <div>
-        {resendButton?.show && (
+        {finalClearOtpCTA?.show && (
           <button
-            onClick={handleResendClick}
             type="button"
-            disabled={isResendDisabled}
-            className={` ${isResendDisabled ? '' : ''}`}
+            className={finalClearOtpCTA.className}
+            onClick={handleClearInputs}
           >
-            {`${resendButton?.text} (${Math.floor(countdown / 60)}:${
-              countdown % 60 < 10 ? '0' : ''
-            }${countdown % 60})`}
+            {finalClearOtpCTA.text}
           </button>
         )}
-      </div>
+        {finalSubmitOtpCTA?.show && (
+          <button
+            className={finalSubmitOtpCTA?.className}
+            type="submit"
+            disabled={isVerifyDisabled}
+          >
+            {finalSubmitOtpCTA?.text}
+          </button>
+        )}
+      </form>
     </section>
   )
 }
 
-export default CustomOtpKit
+export default OtpKit
+
+//Resend OTP Code
+interface ResendCodeProps {
+  resendOtpButton: {
+    localFunctions?: () => any
+    apiURL?: string
+    initialCountdown?: number
+    show?: boolean
+    text?: string
+    className?: string
+    responseData?: (data: any) => void // we define responseData as a function that receives any data
+  }
+}
+
+export const OtpKitResendCode: React.FC<ResendCodeProps> = ({
+  resendOtpButton,
+}) => {
+  const defaultResendOtpButton = {
+    initialCountdown: 60,
+    text: 'Resend code',
+    className: 'rok__resend_button',
+  }
+
+  const finalResendOtpButton = {
+    ...defaultResendOtpButton,
+    ...resendOtpButton,
+  }
+
+  const [countdown, setCountdown] = useState<number>(
+    finalResendOtpButton.initialCountdown,
+  )
+  const [isResendDisabled, setIsResendDisabled] = useState<boolean>(true)
+
+  useEffect(() => {
+    if (countdown === 0) {
+      setIsResendDisabled(false)
+      return
+    }
+
+    const timer = setInterval(() => {
+      setCountdown((prevCountdown) => {
+        if (prevCountdown === 0) {
+          clearInterval(timer)
+          return 0
+        }
+        return prevCountdown - 1
+      })
+    }, 1000)
+
+    return () => clearInterval(timer)
+  }, [countdown])
+
+  const handleResendClick = async () => {
+    if (!isResendDisabled) {
+      setIsResendDisabled(true)
+      if (
+        finalResendOtpButton.localFunctions &&
+        finalResendOtpButton.localFunctions
+      ) {
+        try {
+          const otp = await finalResendOtpButton.localFunctions()
+          if (finalResendOtpButton.responseData) {
+            finalResendOtpButton.responseData(otp)
+          }
+        } catch (error) {
+          console.error('Error generating OTP:', error)
+        }
+      } else if (finalResendOtpButton.apiURL) {
+        // Fetch OTP from the API
+        try {
+          const response = await axios.get(finalResendOtpButton.apiURL)
+          if (finalResendOtpButton.responseData) {
+            finalResendOtpButton.responseData(response.data)
+          }
+        } catch (error) {
+          console.error('Error fetching OTP from API:', error)
+        }
+      } else {
+        console.error('No OTP source specified')
+      }
+
+      // Reset the countdown timer
+      setCountdown(finalResendOtpButton.initialCountdown)
+    }
+  }
+
+  const formatTime = (seconds: number) => {
+    const hours = Math.floor(seconds / 3600)
+    const minutes = Math.floor((seconds % 3600) / 60)
+    const remainingSeconds = seconds % 60
+
+    const parts = []
+
+    if (hours > 0) {
+      parts.push(`${hours}h`)
+    }
+
+    if (minutes > 0 || hours > 0) {
+      parts.push(`${minutes}m`)
+    }
+
+    parts.push(`${remainingSeconds}s`)
+
+    return parts.join(' ')
+  }
+
+  return (
+    <div>
+      <button
+        onClick={handleResendClick}
+        type="button"
+        disabled={isResendDisabled}
+        className={finalResendOtpButton?.className}
+      >
+        {`${finalResendOtpButton?.text} (${formatTime(countdown)})`}
+      </button>
+    </div>
+  )
+}

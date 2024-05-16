@@ -44,19 +44,19 @@ const SideNav = () => {
           </Link>
         </li>
         <div className="py-4 flex flex-col space-y-4 font-normal capitalize">
-          <a href="">
+          <a href="#">
             <div className="flex items-center space-x-2">
               <img src={npm} alt="npm_icon" className="w-[20px]" />
               <span className="text-[14px]">Npm</span>
             </div>
           </a>
-          <a href="">
+          <a href="#">
             <div className="flex items-center space-x-2">
               <img src={github} alt="github_icon" className="w-[20px]" />
               <span className="text-[14px]">GitHub</span>
             </div>
           </a>
-          <a href="">
+          <a href="#">
             <div className="flex items-center space-x-2">
               <img
                 src={contributors}

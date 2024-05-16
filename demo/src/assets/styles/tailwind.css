@@ -19,7 +19,7 @@
       --accent4: hsl(0, 0%, 90%);
       --baseFour: hsl(0, 0%, 0%);
       --baseTwo: #150101;
-      --accent1: #0c0c0c;
+      --accent1: #181818;
     }
   }
 
@@ -29,7 +29,7 @@
     --accent4: hsl(0, 0%, 90%);
     --baseFour: hsl(0, 0%, 0%);
     --baseTwo: #150101;
-    --accent1: #0c0c0c;
+    --accent1: #181818;
   }
 
   :root[data-theme='light'] {
