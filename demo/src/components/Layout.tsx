@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom'
 import Header from './Header'
 import SideNav from './SideNav'
 import Footer from './Footer'
+import BreadCrumbs from './BreadCrumbs'
 
 interface LayoutProps {
   children: ReactNode
@@ -19,6 +20,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         className={`"flex mt-24 ml-[350px] pr-[60px]" ${isSideBar ? 'ml-[350px]' : 'ml-[60px]'}`}
       >
         {isSideBar && <SideNav />}
+        <BreadCrumbs />
         {children}
       </div>
       <Footer />
