@@ -1,23 +1,34 @@
+import React, { useState } from "react";
 import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
 import { tomorrowNight } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import { useState } from "react";
-import { Tabs } from "../../Tab";
-import TemplateWithSeperators, {
-  withSeperatorsTemp,
-} from "../with-seperators/Template";
+import { Tabs } from "../Tab";
 
-const WithSeparators = () => {
+interface ExamplesTemplateProps {
+  id: string;
+  title: string;
+  description: string;
+  templateContent: React.ReactNode;
+  codeContent: string;
+}
+
+const ExamplesTemplate: React.FC<ExamplesTemplateProps> = ({
+  id,
+  title,
+  description,
+  templateContent,
+  codeContent,
+}) => {
   const customSyntaxHighlighterStyle = {
     backgroundColor: "var(--accentCodeBox)",
     color: "var(--accentCode)",
-    padding: "0 20px",
+    padding: "0 20px 30px 20px",
     borderRadius: "10px",
   };
 
   const [showCheck, setShowCheck] = useState(false);
 
   const handleCopyClick = () => {
-    navigator.clipboard.writeText(withSeperatorsTemp);
+    navigator.clipboard.writeText(codeContent);
     setShowCheck(true);
     setTimeout(() => {
       setShowCheck(false);
@@ -25,14 +36,19 @@ const WithSeparators = () => {
   };
 
   return (
-    <section id="withseparators" className="w-[900px] pt-20">
-      <h1>{"Examples22222"}</h1>
-      <div className="p-4">
+    <section id={id} className="w-full pt-20">
+      <h1 className="text-[28px] font-bold lato text-accent-3">{title}</h1>
+      <div className="pt-4 mb-6">{description}</div>
+      <>
         <Tabs
           tabs={[
             {
               label: "Preview",
-              content: <TemplateWithSeperators />,
+              content: (
+                <div className="h-[600px] w-full bg-red-500 flex items-center justify-center">
+                  {templateContent}
+                </div>
+              ),
             },
             {
               label: "Code",
@@ -43,17 +59,18 @@ const WithSeparators = () => {
                     customStyle={customSyntaxHighlighterStyle}
                     style={tomorrowNight}
                   >
-                    {withSeperatorsTemp}
+                    {codeContent}
                   </SyntaxHighlighter>
                   <button
+                    title={!showCheck ? "Copy" : "Copied"}
                     className="absolute top-5 right-10 copy-svg"
                     onClick={handleCopyClick}
                   >
                     {!showCheck && (
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        width="32"
-                        height="32"
+                        width="24"
+                        height="24"
                         fill="currentColor"
                         viewBox="0 0 256 256"
                       >
@@ -65,8 +82,8 @@ const WithSeparators = () => {
                     <svg
                       className="absolute top-5 right-10"
                       xmlns="http://www.w3.org/2000/svg"
-                      width="32"
-                      height="32"
+                      width="24"
+                      height="24"
                       fill="#089904"
                       viewBox="0 0 256 256"
                     >
@@ -78,9 +95,9 @@ const WithSeparators = () => {
             },
           ]}
         />
-      </div>
+      </>
     </section>
   );
 };
 
-export default WithSeparators;
+export default ExamplesTemplate;

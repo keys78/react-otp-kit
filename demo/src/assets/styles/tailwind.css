@@ -18,7 +18,7 @@
     :root {
       --accentCodeBox: rgb(24 24 27);
       --accentCode: hsl(0, 3%, 71%);
-      --accent2: hsl(0, 0%, 90%);
+      --accent2: hsl(0, 1%, 72%);
       --accent3: hsl(0, 0%, 87%);
       --accent4: hsl(0, 0%, 90%);
       --baseFour: hsl(0, 0%, 0%);
@@ -30,7 +30,7 @@
   :root[data-theme='dark'] {
     --accentCodeBox: rgb(24 24 27);    
     --accentCode: hsl(0, 3%, 71%);    
-    --accent2: hsl(0, 0%, 90%);
+    --accent2: hsl(0, 1%, 72%);
     --accent3: hsl(0, 0%, 87%);
     --accent4: hsl(0, 0%, 90%);
     --baseFour: hsl(0, 0%, 0%);

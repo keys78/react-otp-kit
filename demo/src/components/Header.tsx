@@ -6,7 +6,7 @@ const Header = () => {
   const location = useLocation()
 
   return (
-    <header className="bg-baseFour flex items-center justify-between shadow shadow-accent-1 px-[60px] py-3 fixed top-0 left-0 w-full">
+    <header className="bg-baseFour flex items-center justify-between shadow shadow-accent-1 px-[60px] py-3 fixed top-0 left-0 w-full z-[2]">
       <Link to="/">
         <button role="link" className="flex items-center space-x-3">
           <div className="border border-accent-1 rounded-full p-1">

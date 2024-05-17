@@ -1,3 +1,17 @@
+import ExamplesTemplate from "../ExamplesTemplate";
+const WithSeparators = () => {
+  const title = "Separators";
+  const description = "Description for separators";
+
+  return (
+    <ExamplesTemplate
+      title={title}
+      description={description}
+      templateContent={<TemplateWithSeperators />}
+      codeContent={withSeperatorsTemp} id={"separators"}    />
+  );
+};
+
 const TemplateWithSeperators = () => {
   return (
     <div
@@ -10,9 +24,8 @@ const TemplateWithSeperators = () => {
   );
 };
 
-export default TemplateWithSeperators;
 
-export const withSeperatorsTemp = `
+export const withSeperatorsTemp =`
 const WithSeperatorsTemp = () => {
   return (
     <div
@@ -26,4 +39,6 @@ const WithSeperatorsTemp = () => {
 };
 
 export default TemplateWithSeperators;
-  `;
+`
+
+export default WithSeparators;

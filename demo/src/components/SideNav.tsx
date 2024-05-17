@@ -30,9 +30,17 @@ const SideNav = () => {
   ];
 
   const exampleLinks: ExampleLink[] = [
-    { to: "#basicusage", label: "basic sage" },
-    { to: "#withseparators", label: "with separators" },
+    { to: "#basicusage", label: "basic usage" },
+    { to: "#numberofinputs", label: "Inputs Length" },
+    { to: "#type", label: "Inputs Type" },
+    { to: "#separators", label: "separators & Intervals" },
     { to: "#autofocus", label: "auto focus" },
+    { to: "#placeholder", label: "Inputs Placeholder" },
+    { to: "#inputstyles", label: "Custom Input Styles" },
+    { to: "#togglesubmit", label: "Submit Button Options" },
+    { to: "#clearbutton", label: "Clear Button Options" },
+    { to: "#autosubmit", label: "Auto Submit" },
+    { to: "#resendotp", label: "Resend OTP Functions" },
   ];
 
   const iconLinks: IconLink[] = [
@@ -57,7 +65,7 @@ const SideNav = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-[230px] mr-[350px] mt-24 pl-[60px]">
+    <nav className="fixed top-0 left-0 w-[280px] mt-24 pl-[60px] overflow-auto">
       <ul className="flex flex-col space-y-6 uppercase font-semibold">
         {navLinks.map((navLink, index) => (
           <li key={index}>
@@ -66,7 +74,7 @@ const SideNav = () => {
               className={
                 location.pathname === navLink.to
                   ? "active bg-gradient-to-r from-purple-600 via-purple-400 to-green-800 inline-block text-transparent bg-clip-text"
-                  : ""
+                  : "text-accent-3"
               }
             >
               {navLink.label}
@@ -78,7 +86,7 @@ const SideNav = () => {
             className={
               location.pathname.startsWith("/examples")
                 ? "active bg-gradient-to-r from-purple-600 via-purple-400 to-green-800 inline-block text-transparent bg-clip-text"
-                : ""
+                : "text-accent-3"
             }
           >
             Examples

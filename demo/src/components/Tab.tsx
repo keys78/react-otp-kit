@@ -19,14 +19,14 @@ const Tabs: React.FC<TabsProps> = ({ initialTab = 0, tabs }) => {
 
   return (
     <div className="w-full">
-      <div className="flex mb-4">
+      <div className="flex mb-4 border-b-2 border-accent-1">
         {tabs.map((tab, index) => (
           <button
             key={index}
             className={`${
               activeTab === index
-                ? "bg-blue-500 text-white"
-                : "bg-gray-200 text-gray-700"
+                ? "font-normal bg-gradient-to-r from-purple-600 via-purple-400 to-green-800 inline-block text-transparent bg-clip-text border-b-2 -mb-[2px]"
+                : "text-gray-400"
             } px-4 py-2 mr-2 rounded-t-lg`}
             onClick={() => setActiveTab(index)}
           >
