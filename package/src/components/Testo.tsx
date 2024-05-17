@@ -7,15 +7,15 @@ const Testing = () => {
   const handleResponseData = (data: any) => {
     console.log('responseFataOTP', data)
   }
-  const generateRandomDigits = () => {
-    let result = ''
-    const characters = '0123456789'
-    const length = 6
-    for (let i = 0; i < length; i++) {
-      result += characters.charAt(Math.floor(Math.random() * characters.length))
-    }
-    return result
-  }
+  // const generateRandomDigits = () => {
+  //   let result = ''
+  //   const characters = '0123456789'
+  //   const length = 6
+  //   for (let i = 0; i < length; i++) {
+  //     result += characters.charAt(Math.floor(Math.random() * characters.length))
+  //   }
+  //   return result
+  // }
 
   return (
     <div>
@@ -23,18 +23,18 @@ const Testing = () => {
       <OtpKit
         value={otp}
         onChange={setOtp}
-        placeholder="haello"
-        numOfInputs={3}
+        placeholder="go"
+        numOfInputs={13}
         type="text"
         separator={{
           show: true,
-          value: '-',
+          value: '+',
           intervals: 1,
           className: 'default__styles',
         }}
         inputStyles={{
-          generalStyles: 'fwe',
-          onFill: 'ewf',
+          generalStyles: 'gen__style',
+          onFill: 'komo',
         }}
         autoFocus={{
           isAutoFocused: true,
@@ -42,12 +42,12 @@ const Testing = () => {
         }}
         submitOtpButton={{
           show: true,
-          text: 'Butoke',
+          text: 'Submit OTP',
           className: '',
         }}
         clearOtpButton={{
           show: true,
-          text: 'Krara',
+          text: 'Clear OTP',
           className: '',
         }}
         autoSubmit={false}

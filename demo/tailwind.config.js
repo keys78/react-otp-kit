@@ -9,6 +9,8 @@ export default {
           2: "var(--accent2)",
           3: "var(--accent3)",
           4: "var(--accent4)",
+          5: "var(--accentCode)",
+          6: "var(--accentCodeBox)",
         },
         baseOne: "var(--baseOne)",
         baseTwo: "var(--baseTwo)",

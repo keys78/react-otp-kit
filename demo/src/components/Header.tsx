@@ -24,9 +24,9 @@ const Header = () => {
             <Link
               to="/get-started"
               className={
-                location.pathname === '/get-started'
-                  ? 'active bg-gradient-to-r from-purple-600 via-purple-400 to-green-800 inline-block text-transparent bg-clip-text'
-                  : ''
+                location.pathname === "/get-started"
+                  ? "active bg-gradient-to-r from-purple-600 via-purple-400 to-green-800 inline-block text-transparent bg-clip-text"
+                  : ""
               }
             >
               Get Started
@@ -36,9 +36,9 @@ const Header = () => {
             <Link
               to="/guides"
               className={
-                location.pathname === '/guides'
-                  ? 'active bg-gradient-to-r from-purple-600 via-purple-400 to-green-800 inline-block text-transparent bg-clip-text'
-                  : ''
+                location.pathname === "/guides"
+                  ? "active bg-gradient-to-r from-purple-600 via-purple-400 to-green-800 inline-block text-transparent bg-clip-text"
+                  : ""
               }
             >
               Guides
@@ -48,9 +48,9 @@ const Header = () => {
             <Link
               to="/examples"
               className={
-                location.pathname === '/examples'
-                  ? 'active bg-gradient-to-r from-purple-600 via-purple-400 to-green-800 inline-block text-transparent bg-clip-text'
-                  : ''
+                location.pathname.startsWith("/examples")
+                  ? "active bg-gradient-to-r from-purple-600 via-purple-400 to-green-800 inline-block text-transparent bg-clip-text"
+                  : ""
               }
             >
               Examples
@@ -60,7 +60,7 @@ const Header = () => {
         <ThemeSwitcher />
       </nav>
     </header>
-  )
+  );
 }
 
 export default Header

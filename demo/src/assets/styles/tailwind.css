@@ -4,6 +4,8 @@
 
 @layer base {
   :root {
+    --accentCodeBox: rgb(245, 245, 246);
+    --accentCode: hsl(288, 3%, 30%);
     --accent2: hsl(287, 4%, 45%);
     --accent3: hsl(265, 11%, 22%);
     --accent4: hsl(0, 0%, 19%);
@@ -14,6 +16,8 @@
 
   @media (prefers-color-scheme: dark) {
     :root {
+      --accentCodeBox: rgb(24 24 27);
+      --accentCode: hsl(0, 3%, 71%);
       --accent2: hsl(0, 0%, 90%);
       --accent3: hsl(0, 0%, 87%);
       --accent4: hsl(0, 0%, 90%);
@@ -24,6 +28,8 @@
   }
 
   :root[data-theme='dark'] {
+    --accentCodeBox: rgb(24 24 27);    
+    --accentCode: hsl(0, 3%, 71%);    
     --accent2: hsl(0, 0%, 90%);
     --accent3: hsl(0, 0%, 87%);
     --accent4: hsl(0, 0%, 90%);
@@ -33,6 +39,8 @@
   }
 
   :root[data-theme='light'] {
+    --accentCodeBox: rgb(245, 245, 246);
+    --accentCode: hsl(288, 3%, 30%);
     --accent2: hsl(287, 4%, 45%);
     --accent3: hsl(265, 11%, 22%);
     --accent4: hsl(0, 0%, 19%);

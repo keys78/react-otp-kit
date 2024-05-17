@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable prettier/prettier */
 import React, {
   useState,
@@ -10,7 +12,7 @@ import React, {
 } from 'react'
 import axios from 'axios'
 
-type whiteListInputTypes = 'number' | 'text' | 'password'
+export type whiteListInputTypes = 'number' | 'text' | 'password'
 
 interface OtpKitProps {
   value: string
@@ -390,3 +392,5 @@ export const OtpKitResendCode: React.FC<ResendCodeProps> = ({
     </div>
   )
 }
+
+
