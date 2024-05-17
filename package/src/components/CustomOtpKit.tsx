@@ -19,15 +19,13 @@ interface OtpKitProps {
   onChange: (value: string) => void
   numOfInputs?: number
   placeholder?: string
-  separator: {
-    show: boolean
+  autoSubmit?: boolean
+  autoFocus: boolean
+  separator?: {
+    show?: boolean
     value?: string
     intervals: number
     className?: string
-  }
-  autoFocus: {
-    isAutoFocused: boolean
-    style: React.CSSProperties
   }
   submitOtpButton?: {
     show?: boolean
@@ -40,7 +38,6 @@ interface OtpKitProps {
     className?: string
   }
   type: whiteListInputTypes
-  autoSubmit: boolean
   inputStyles?: {
     generalStyles?: string
     onFill?: string
@@ -53,8 +50,8 @@ const OtpKit: React.FC<OtpKitProps> = ({
   type,
   placeholder,
   separator,
-  autoFocus,
-  autoSubmit,
+  autoFocus = true,
+  autoSubmit = false,
   submitOtpButton,
   clearOtpButton,
   inputStyles,
@@ -90,10 +87,23 @@ const OtpKit: React.FC<OtpKitProps> = ({
   )
 
   useEffect(() => {
-    if (autoFocus.isAutoFocused) {
-      inputRefs.current[0]?.focus()
+    // Find the index of the next empty input field
+    const nextEmptyIndex = otp.findIndex((digit) => digit === '')
+
+    // If there is an empty input field, focus on it
+    if (nextEmptyIndex !== -1) {
+      inputRefs.current[nextEmptyIndex]?.focus()
     }
-  }, [autoFocus.isAutoFocused])
+  }, [otp])
+
+
+  useEffect(() => {
+    if (autoFocus) {
+      inputRefs.current[0]?.focus()
+    } else {
+      inputRefs.current[0]?.blur()
+    }
+  }, [autoFocus])
 
   // Auto-submit when all inputs are filled and autoSubmit is enabled
   useEffect(() => {
@@ -212,20 +222,10 @@ const OtpKit: React.FC<OtpKitProps> = ({
     inputRefs.current[0]?.focus()
   }
 
-  useEffect(() => {
-    // Find the index of the next empty input field
-    const nextEmptyIndex = otp.findIndex((digit) => digit === '')
-
-    // If there is an empty input field, focus on it
-    if (nextEmptyIndex !== -1) {
-      inputRefs.current[nextEmptyIndex]?.focus()
-    }
-  }, [otp])
-
   return (
     <section>
-      <form onSubmit={handleSubmit} className="text-center">
-        <div role="group" className="input-group">
+      <form onSubmit={handleSubmit} className="text-center" role='form'>
+        <div role='group' className="rok__input__group">
           {otp.map((digit, index) => (
             <React.Fragment key={index}>
               <input
@@ -237,11 +237,12 @@ const OtpKit: React.FC<OtpKitProps> = ({
                 onPaste={handlePaste}
                 maxLength={1}
                 disabled={index !== 0 && otp[index - 1] === ''}
-                className={`${inputStyles?.generalStyles || 'gen__style'} ${digit ? inputStyles?.onFill || 'komo' : ''}`}
+                className={`${inputStyles?.generalStyles || 'rok__input--defaultStyles'} ${digit ? inputStyles?.onFill || 'rok__defaultFill' : ''}`}
                 ref={(el) => (inputRefs.current[index] = el)}
                 autoComplete="one-time-code"
+                aria-label={`Digit ${index + 1}`}
               />
-              {separator.show &&
+              {separator?.show &&
                 (index + 1) % separator.intervals === 0 &&
                 index !== sanitizedNumOfInputs - 1 && (
                   <div className={separator.className}>{separator.value}</div>
@@ -386,6 +387,8 @@ export const OtpKitResendCode: React.FC<ResendCodeProps> = ({
         type="button"
         disabled={isResendDisabled}
         className={finalResendOtpButton?.className}
+        aria-label={finalResendOtpButton?.text}
+
       >
         {`${finalResendOtpButton?.text} (${formatTime(countdown)})`}
       </button>

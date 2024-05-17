@@ -1,6 +1,45 @@
+/* buttons */
+.rok__button {}
+.rok__submit_button {}
+.rok__submit_button {}
+.rok__clear_button {}
+
+
+/* input group */
+    /* Chrome, Safari, Edge, Opera */
+            /* Firefox */
+.rok__input__group { display: flex; align-items: center; column-gap: 20px; box-sizing: border-box;}
+  .rok__input__group .rok__input--defaultStyles { width: 40px; height: 40px; border: 1px solid; text-align: center;}
+  .rok__input__group .rok__input--defaultStyles:disabled { cursor: not-allowed; }
+  .rok__input__group .rok__input--defaultStyles::-webkit-outer-spin-button,
+  .rok__input__group .rok__input--defaultStyles::-webkit-inner-spin-button {  -webkit-appearance: none;  margin: 0; }
+  .rok__input__group .rok__input-defaultStyles[type=number] { -moz-appearance: textfield; }
+  .rok__input__group .rok__defaultFill { border: 1px solid #07c307;}
+
+  /* curved variant - className: rok__input--variant1 */
+  .rok__input__group .rok__input--variant1 { width: 40px; height: 40px; border: 2px solid; text-align: center; border-radius: 8px;}
+  .rok__input__group .rok__input--variant1:disabled { cursor: not-allowed; }
+  .rok__input__group .rok__input--variant1::-webkit-outer-spin-button,
+  .rok__input__group .rok__input--variant1::-webkit-inner-spin-button {  -webkit-appearance: none;  margin: 0; }
+  .rok__input__group .rok__input-variant1[type=number] { -moz-appearance: textfield; }
+
+
+
+  /* fill types */
+  .rok__input__group .onfill__type1 { border: 2px solid #07c307 !important; }
+  .rok__input__group .onfill__type2 { border: 2px solid #372df1 !important; }
+  .rok__input__group .onfill__type3 { background: #07c3071b !important; border: 2px solid #07c307 !important; }
+
+  /* .rok__input__group input:focus { border:2px solid #b80d32 !important; outline: none; } */
+
+
+
+
+
+/* 
 .input-group {
   display: flex;
-  align-items: center;
+  align-items: center; 
 }
 .default__styles {
   padding: 0 10px;
@@ -45,4 +84,7 @@
 
 .rok__submit_button {
   background: #594dbd;
-}
+} */
+
+
+body { display: flex; align-items: center; justify-content: center; justify-items: center; justify-self: center; height: 100vh; }

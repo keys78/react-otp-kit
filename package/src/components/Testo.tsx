@@ -1,12 +1,12 @@
 /* eslint-disable prettier/prettier */
 import { useState } from 'react'
-import OtpKit, { OtpKitResendCode } from './CustomOtpKit'
+import OtpKit from './CustomOtpKit'
 
 const Testing = () => {
   const [otp, setOtp] = useState('')
-  const handleResponseData = (data: any) => {
-    console.log('responseFataOTP', data)
-  }
+  // const handleResponseData = (data: any) => {
+  //   console.log('responseFataOTP', data)
+  // }
   // const generateRandomDigits = () => {
   //   let result = ''
   //   const characters = '0123456789'
@@ -18,41 +18,42 @@ const Testing = () => {
   // }
 
   return (
-    <div>
-      <h1>Testing Imports</h1>
-      <OtpKit
-        value={otp}
-        onChange={setOtp}
-        placeholder="go"
-        numOfInputs={13}
-        type="text"
-        separator={{
-          show: true,
-          value: '+',
-          intervals: 1,
-          className: 'default__styles',
-        }}
-        inputStyles={{
-          generalStyles: 'gen__style',
-          onFill: 'komo',
-        }}
-        autoFocus={{
-          isAutoFocused: true,
-          style: { backgroundColor: 'yellow' },
-        }}
-        submitOtpButton={{
-          show: true,
-          text: 'Submit OTP',
-          className: '',
-        }}
-        clearOtpButton={{
-          show: true,
-          text: 'Clear OTP',
-          className: '',
-        }}
-        autoSubmit={false}
-      />
-      <OtpKitResendCode
+    <OtpKit
+      value={otp}
+      onChange={setOtp}
+      placeholder=""
+      numOfInputs={6}
+      type="number"
+      // separator={{
+      //   show: true,
+      //   value: '+',
+      //   intervals: 1,
+      //   className: 'default__styles',
+      // }}
+      inputStyles={{
+        generalStyles: 'rok__input--variant1',
+        onFill: 'onfill__type1',
+      }}
+      autoFocus={true}
+      submitOtpButton={{
+        show: true,
+        text: 'Submit OTP',
+        className: '',
+      }}
+      clearOtpButton={{
+        show: true,
+        text: 'Clear OTP',
+        className: '',
+      }}
+      // autoSubmit={true}
+    />
+  )
+}
+
+export default Testing
+
+{
+  /* <OtpKitResendCode
         resendOtpButton={{
           // localFunctions: generateRandomDigits,
           // apiURL: 'https://jsonplaceholder.typicode.com/posts',
@@ -63,8 +64,5 @@ const Testing = () => {
         }}
       />
       <p>Generated OTP: {otp}</p>
-    </div>
-  )
+    </div> */
 }
-
-export default Testing
