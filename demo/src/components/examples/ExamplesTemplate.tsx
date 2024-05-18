@@ -37,8 +37,8 @@ const ExamplesTemplate: React.FC<ExamplesTemplateProps> = ({
 
   return (
     <section id={id} className="w-full pt-20">
-      <h1 className="text-[28px] font-bold lato text-accent-3">{title}</h1>
-      <div className="pt-4 mb-6">{description}</div>
+      <h1 className="sm:text-[28px] text-[22px] font-bold lato text-accent-3">{title}</h1>
+      <div className="pt-2 mb-6">{description}</div>
       <>
         <Tabs
           tabs={[

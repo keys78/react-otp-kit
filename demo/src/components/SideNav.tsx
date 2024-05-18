@@ -20,7 +20,11 @@ interface IconLink {
   link: string;
 }
 
-const SideNav = () => {
+interface SideNavProps {
+  toggleSideBar?: () => void;
+}
+
+const SideNav = ({ toggleSideBar }: SideNavProps) => {
   const location = useLocation();
   const hash = location.hash;
 
@@ -65,13 +69,14 @@ const SideNav = () => {
   ];
 
   return (
-    <div className="relative mr-[250px] md:pl-[70px] pl-[20px] overflow-scroll">
-      <nav className="md:min-w-[280px] mt-24 fixed h-full overflow-scroll">
+    <div className="relative xl:mr-[300px] sm:mr-[250px] mr-[300px] h-[100vh] md:pl-[70px] pl-[20px]">
+      <nav className="md:min-w-[280px] mt-24 overflow-auto fixed h-full">
         <ul className="flex flex-col space-y-6 uppercase font-semibold">
           {navLinks.map((navLink, index) => (
             <li key={index}>
               <Link
                 to={navLink.to}
+                onClick={toggleSideBar}
                 className={
                   location.pathname === navLink.to
                     ? "active bg-gradient-to-r from-purple-600 via-purple-400 to-green-800 inline-block text-transparent bg-clip-text"
@@ -96,6 +101,7 @@ const SideNav = () => {
               {exampleLinks.map((exampleLink, index) => (
                 <a key={index} href={`/examples/${exampleLink.to}`}>
                   <li
+                    onClick={toggleSideBar}
                     className={
                       hash === exampleLink.to
                         ? "mb-3 bg-accent-1 pb-1 pt-[1px] px-3 rounded-md cursor-pointer"

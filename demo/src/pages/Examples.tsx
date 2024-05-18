@@ -3,10 +3,12 @@ import WithSeparators from "../components/examples/with-seperators/WithSeparator
 
 const Examples = () => {
   return (
-    <>
+    <section className="max-w-[800px]">
       <p>Bread Crumbs</p>
       <div>
-        <h2 className="text-[36px] font-semibold pt-2 pb-3 text-accent-3">Examples</h2>
+        <h2 className="sm:text-[36px] text-[24px] font-semibold pt-2 pb-3 text-accent-3">
+          Examples
+        </h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa autem
           totam earum fugiat excepturi voluptate, error sit officia laudantium
@@ -23,7 +25,7 @@ const Examples = () => {
         nesciunt minus qui illo neque voluptates voluptate, earum eum repellat
         temporibus numquam. Facilis.
       </div>
-    </>
+    </section>
   );
 };
 
