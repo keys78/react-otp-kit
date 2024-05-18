@@ -5,8 +5,6 @@ const BreadCrumbs = () => {
   const location = useLocation();
   const navigate = useNavigate()
 
-  console.log('location', location)
-
   const paths = location.pathname.split('/');
 
   const navigateTo = (index: number) => {
