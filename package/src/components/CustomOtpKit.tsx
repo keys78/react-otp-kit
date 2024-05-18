@@ -224,7 +224,7 @@ const OtpKit: React.FC<OtpKitProps> = ({
 
   return (
     <section>
-      <form onSubmit={handleSubmit} className="text-center" role="form">
+      <form onSubmit={handleSubmit} className="rok__form" role="form">
         <div role="group" className="rok__input__group">
           {otp.map((digit, index) => (
             <React.Fragment key={index}>
@@ -250,7 +250,7 @@ const OtpKit: React.FC<OtpKitProps> = ({
             </React.Fragment>
           ))}
         </div>
-        <div className='rok__cta__container'>
+        <div className="rok__cta__container">
           {finalClearOtpCTA?.show && (
             <button
               type="button"

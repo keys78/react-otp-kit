@@ -4,9 +4,9 @@ import OtpKit, { OtpKitResendCode } from './CustomOtpKit'
 
 const Testing = () => {
   const [otp, setOtp] = useState('')
-  const handleResponseData = (data: any) => {
-    console.log('responseFataOTP', data)
-  }
+  // const handleResponseData = (data: any) => {
+  //   console.log('responseFataOTP', data)
+  // }
   const generateRandomDigits = () => {
     let result = ''
     const characters = '0123456789'
@@ -32,8 +32,8 @@ const Testing = () => {
         //   className: 'default__styles',
         // }}
         inputStyles={{
-          generalStyles: 'rok__input--variant6',
-          onFill: 'onfill__type2',
+          generalStyles: 'rok__input--variant1',
+          onFill: 'onfill__type1',
         }}
         autoFocus={true}
         // submitOtpButton={{
@@ -53,7 +53,7 @@ const Testing = () => {
           localFunctions: generateRandomDigits,
           apiURL: 'https://jsonplaceholder.typicode.com/posts',
           initialCountdown: 2,
-          responseData: handleResponseData, // Pass the function to handle response data
+          // responseData: handleResponseData, // Pass the function to handle response data
         }}
       />
     </>
