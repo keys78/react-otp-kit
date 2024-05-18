@@ -1,31 +1,132 @@
-import React, { ReactNode } from 'react'
-import { useLocation } from 'react-router-dom'
-import Header from './Header'
-import SideNav from './SideNav'
-import Footer from './Footer'
+// import React, { ReactNode, useState } from "react";
+// import { useLocation } from "react-router-dom";
+// import Header from "./Header";
+// import SideNav from "./SideNav";
+// import Footer from "./Footer";
+
+// interface LayoutProps {
+//   children: ReactNode;
+// }
+
+// const Layout: React.FC<LayoutProps> = ({ children }) => {
+//   const location = useLocation();
+//   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
+//   const isSideBar = location.pathname !== "/";
+
+//   const toggleSideBar = () => {
+//     setIsSideBarOpen(!isSideBarOpen);
+//   };
+
+//   return (
+//     <main>
+//       <Header toggleSideBar={toggleSideBar} />
+//       <div className="flex items-start">
+//         {isSideBar && (
+//           <div
+//             className={`bg-baseFour border border-accent-1 rounded-r-[10px] fixed h-full z-50 transition-all duration-500 md:hidden block ${
+//               isSideBarOpen ? "left-0" : "-left-full"
+//             }`}
+//           >
+//             <button
+//               className="md:hidden block pt-8 pl-5 -mb-16"
+//               onClick={toggleSideBar}
+//             >
+//               <svg
+//                 xmlns="http://www.w3.org/2000/svg"
+//                 width="32"
+//                 height="32"
+//                 fill="currentColor"
+//                 viewBox="0 0 256 256"
+//               >
+//                 <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path>
+//               </svg>
+//             </button>
+//             <SideNav />
+//           </div>
+//         )}
+//         <div className="md:block hidden">
+//           <SideNav />
+//         </div>
+//         <div
+//           className={`md:px-[60px] px-[20px] mt-24 max-w-[900px] ${
+//             !isSideBar ? "mx-auto" : ""
+//           }`}
+//         >
+//           {children}
+//         </div>
+//       </div>
+//       <Footer />
+//     </main>
+//   );
+// };
+
+// export default Layout;
+
+import React, { ReactNode, useState, lazy, Suspense } from "react";
+import { useLocation } from "react-router-dom";
+import Header from "./Header";
+import Footer from "./Footer";
+
+const SideNav = lazy(() => import("./SideNav")); // Lazy load SideNav
 
 interface LayoutProps {
-  children: ReactNode
+  children: ReactNode;
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-  const location = useLocation()
-  const isSideBar = location.pathname !== '/'
+  const location = useLocation();
+  const [isSideBarOpen, setIsSideBarOpen] = useState<boolean>(false);
+  const isSideBar: boolean = location.pathname !== "/";
+
+  const toggleSideBar = (): void => {
+    setIsSideBarOpen(!isSideBarOpen);
+  };
 
   return (
     <main>
-      <Header />
-      <div
-        className={`"flex mt-24 ml-[350px] pr-[60px]" ${
-          isSideBar ? "ml-[350px]" : "ml-[60px]"
-        }`}
-      >
-        {isSideBar && <SideNav />}
-        <div className='max-w-[900px]'>{children}</div>
+      <Header toggleSideBar={toggleSideBar} />
+      <div className="flex items-start">
+        <Suspense fallback={<div>Loading....</div>}>
+          {
+            <div
+              className={`overflow-scroll bg-baseFour border border-accent-1 rounded-r-[10px] fixed h-full z-50 transition-all duration-500 md:hidden block ${
+                isSideBarOpen ? "left-0" : "-left-full"
+              }`}
+            >
+              <button
+                className="md:hidden block pt-6 pl-5 -mb-16"
+                onClick={toggleSideBar}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  fill="currentColor"
+                  viewBox="0 0 256 256"
+                >
+                  <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path>
+                </svg>
+              </button>
+              <SideNav />
+            </div>
+          }
+          {isSideBar && (
+            <div className="md:block hidden">
+              <SideNav />
+            </div>
+          )}
+        </Suspense>
+        <div
+          className={`md:px-[60px] px-[20px] mt-24 max-w-[900px] ${
+            !isSideBar ? "mx-auto" : ""
+          }`}
+        >
+          {children}
+        </div>
       </div>
       <Footer />
     </main>
   );
-}
+};
 
-export default Layout
+export default Layout;

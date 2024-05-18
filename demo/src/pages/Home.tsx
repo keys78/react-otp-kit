@@ -1,10 +1,10 @@
-import { useNavigate } from 'react-router-dom'
-import Logo from '../assets/svg/Logo'
+import { useNavigate } from "react-router-dom";
+import Logo from "../assets/svg/Logo";
 const Home = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
-    <section className="max-w-[1024px] mx-auto">
+    <section>
       <div className="flex items-center justify-between">
         <div className="max-w-[450px]">
           <h1 className="text-[90px] sono font-bold text-accent-4 leading-none">
@@ -22,7 +22,7 @@ const Home = () => {
               Get Started
             </button>
             <button
-              onClick={() => navigate('/get-started')}
+              onClick={() => navigate("/get-started")}
               className="border-2 border-purple-500 px-8 py-2 rounded-[20px] focus:ring-4 focus:ring-teal-300 bg-gradient-to-r from-purple-600 via-purple-400 to-green-800 inline-block text-transparent bg-clip-text"
             >
               Examples
@@ -59,7 +59,7 @@ const Home = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
