@@ -20,7 +20,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         className={`"flex mt-24 ml-[350px] pr-[60px]" ${isSideBar ? 'ml-[350px]' : 'ml-[60px]'}`}
       >
         {isSideBar && <SideNav />}
-        <BreadCrumbs />
+        {
+          location.pathname !== '/' && <BreadCrumbs />
+        }
         {children}
       </div>
       <Footer />
