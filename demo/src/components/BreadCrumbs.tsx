@@ -23,12 +23,12 @@ const BreadCrumbs = () => {
       {paths?.map((path, index) => (
         <React.Fragment key={index}>
           <span 
-            className={`${index !== paths?.length - 1 && 'cursor-pointer'} ${'/' + path === activePath && 'text-blue-500'}`}
+            className={`${index !== paths?.length - 1 && 'cursor-pointer'} ${'/' + path === activePath && 'active bg-gradient-to-r from-purple-600 via-purple-400 to-green-800 inline-block text-transparent bg-clip-text'}`}
             onClick={() => navigateTo(index)}
           >
             {path === '' ? 'Home' : path }
           </span>
-          <span className={`${index === paths?.length - 1  && 'hidden'}`}> &gt; </span>
+          <span className={`${index === paths?.length - 1  && 'hidden'}`}> ~ </span>
         </React.Fragment>
       ))}
     </div>
