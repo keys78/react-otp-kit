@@ -1,15 +1,6 @@
-/* buttons */
-.rok__button {}
-.rok__submit_button {}
-.rok__submit_button {}
-.rok__clear_button {}
-
-
-/* input group */
-    /* Chrome, Safari, Edge, Opera */
-            /* Firefox */
-.rok__input__group { display: flex; align-items: center; column-gap: 20px; box-sizing: border-box;}
-  .rok__input__group .rok__input--defaultStyles { width: 40px; height: 40px; border: 1px solid; text-align: center;}
+/* input group *//* Chrome, Safari, Edge, Opera *//* Firefox */
+.rok__input__group { display: flex; align-items: center; column-gap: 20px; box-sizing: border-box; }
+  .rok__input__group .rok__input--defaultStyles { width: 40px; height: 40px; border: 1px solid; text-align: center; border-radius: 8px;}
   .rok__input__group .rok__input--defaultStyles:disabled { cursor: not-allowed; }
   .rok__input__group .rok__input--defaultStyles::-webkit-outer-spin-button,
   .rok__input__group .rok__input--defaultStyles::-webkit-inner-spin-button {  -webkit-appearance: none;  margin: 0; }
@@ -23,68 +14,55 @@
   .rok__input__group .rok__input--variant1::-webkit-inner-spin-button {  -webkit-appearance: none;  margin: 0; }
   .rok__input__group .rok__input-variant1[type=number] { -moz-appearance: textfield; }
 
+  /* curved variant - className: rok__input--variant2 */
+  .rok__input__group .rok__input--variant2 { all: unset; width: 50px; height: 50px; border: 2px solid; text-align: center; border-radius: 100%;}
+  .rok__input__group .rok__input--variant2:disabled { cursor: not-allowed; }
+  .rok__input__group .rok__input--variant2::-webkit-outer-spin-button,
+  .rok__input__group .rok__input--variant2::-webkit-inner-spin-button {  -webkit-appearance: none;  margin: 0; }
+  .rok__input__group .rok__input-variant2[type=number] { -moz-appearance: textfield; }
 
+  /* curved variant - className: rok__input--variant3 */
+  .rok__input__group .rok__input--variant3 { all: unset; width: 50px; height: 50px; border-bottom: 2px solid; text-align: center;}
+  .rok__input__group .rok__input--variant3:disabled { cursor: not-allowed; }
+  .rok__input__group .rok__input--variant3::-webkit-outer-spin-button,
+  .rok__input__group .rok__input--variant3::-webkit-inner-spin-button {  -webkit-appearance: none;  margin: 0; }
+  .rok__input__group .rok__input-variant3[type=number] { -moz-appearance: textfield; }
+
+  /* double-edge variant - className: rok__input--variant4 */
+  .rok__input__group .rok__input--variant4 { all: unset; width: 50px; height: 50px; border: 2px solid; text-align: center;}
+  .rok__input__group .rok__input--variant4:first-of-type { border-top-left-radius: 20px; border-bottom-left-radius: 20px; }
+  .rok__input__group .rok__input--variant4:last-of-type { border-top-right-radius: 20px; border-bottom-right-radius: 20px; }
+  .rok__input__group .rok__input--variant4:disabled { cursor: not-allowed; }
+  .rok__input__group .rok__input--variant4::-webkit-outer-spin-button,
+  .rok__input__group .rok__input--variant4::-webkit-inner-spin-button {  -webkit-appearance: none;  margin: 0; }
+  .rok__input__group .rok__input-variant4[type=number] { -moz-appearance: textfield; }
+
+  /* curved variant - className: rok__input--variant5 */
+  .rok__input__group .rok__input--variant5 { all: unset; width: 50px; height: 50px; border: 2px solid; text-align: center; border-radius: 42px;}
+  .rok__input__group .rok__input--variant5:first-of-type { border-top-right-radius: 20px; border-bottom-right-radius: 120px; }
+  .rok__input__group .rok__input--variant5:last-of-type { border-top-left-radius: 120px; border-bottom-left-radius: 20px; }
+  .rok__input__group .rok__input--variant5:disabled { cursor: not-allowed; }
+  .rok__input__group .rok__input--variant5::-webkit-outer-spin-button,
+  .rok__input__group .rok__input--variant5::-webkit-inner-spin-button {  -webkit-appearance: none;  margin: 0; }
+  .rok__input__group .rok__input-variant5[type=number] { -moz-appearance: textfield; }
+
+  /* curved variant - className: rok__input--variant6 */
+  .rok__input__group .rok__input--variant6 { all: unset; width: 50px; height: 50px; border: 2px solid; text-align: center; border-radius: 42px;}
+  .rok__input__group .rok__input--variant6:nth-of-type(even) { border-top-right-radius: 20px; border-bottom-right-radius: 120px; }
+  .rok__input__group .rok__input--variant6:nth-of-type(odd) { border-top-left-radius: 120px; border-bottom-left-radius: 20px; }
+  .rok__input__group .rok__input--variant6:disabled { cursor: not-allowed; }
+  .rok__input__group .rok__input--variant6::-webkit-outer-spin-button,
+  .rok__input__group .rok__input--variant6::-webkit-inner-spin-button {  -webkit-appearance: none;  margin: 0; }
+  .rok__input__group .rok__input-variant6[type=number] { -moz-appearance: textfield; }
 
   /* fill types */
   .rok__input__group .onfill__type1 { border: 2px solid #07c307 !important; }
   .rok__input__group .onfill__type2 { border: 2px solid #372df1 !important; }
   .rok__input__group .onfill__type3 { background: #07c3071b !important; border: 2px solid #07c307 !important; }
-
-  /* .rok__input__group input:focus { border:2px solid #b80d32 !important; outline: none; } */
-
+  .rok__input__group .onfill__variant3 { border-bottom: 2px solid #07c307 !important; }
 
 
-
-
-/* 
-.input-group {
-  display: flex;
-  align-items: center; 
-}
-.default__styles {
-  padding: 0 10px;
-}
-
-.gen__style {
-  all: unset;
-  border-radius: 42px;
-  width: 30px;
-  height: 30px;
-  padding: 6px;
-  text-align: center;
-  border: 1px solid #ededed;
-}
-.gen__style:first-of-type {
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-}
-.gen__style:last-of-type {
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
-.gen__style:disabled {
-  background: rgb(224, 226, 224) !important;
-  cursor: not-allowed;
-}
-.gen__style:focus {
-  border: 2px solid rgb(220, 63, 1) !important;
-}
-.komo {
-  border: 2px solid rgb(7, 195, 7);
-}
-.karo {
-  background: rgb(22, 5, 213);
-  border: 2px rgb(55, 228, 255);
-}
-
-.koro {
-  padding: 20px;
-  width: 100%;
-}
-
-.rok__submit_button {
-  background: #594dbd;
-} */
-
-
-body { display: flex; align-items: center; justify-content: center; justify-items: center; justify-self: center; height: 100vh; }
+/* button styles */
+.rok__cta__container { display: flex; align-items: center; justify-content: space-around; padding-top: 60px; }
+  .rok__cta__container button { padding: 10px 40px; width: fit-content; cursor: pointer; min-width: 100px; border-radius: 8px;}
+  .rok__cta__container button:disabled { cursor: not-allowed; }

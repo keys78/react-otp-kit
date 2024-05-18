@@ -224,8 +224,8 @@ const OtpKit: React.FC<OtpKitProps> = ({
 
   return (
     <section>
-      <form onSubmit={handleSubmit} className="text-center" role='form'>
-        <div role='group' className="rok__input__group">
+      <form onSubmit={handleSubmit} className="text-center" role="form">
+        <div role="group" className="rok__input__group">
           {otp.map((digit, index) => (
             <React.Fragment key={index}>
               <input
@@ -250,24 +250,26 @@ const OtpKit: React.FC<OtpKitProps> = ({
             </React.Fragment>
           ))}
         </div>
-        {finalClearOtpCTA?.show && (
-          <button
-            type="button"
-            className={finalClearOtpCTA.className}
-            onClick={handleClearInputs}
-          >
-            {finalClearOtpCTA.text}
-          </button>
-        )}
-        {finalSubmitOtpCTA?.show && (
-          <button
-            className={finalSubmitOtpCTA?.className}
-            type="submit"
-            disabled={isVerifyDisabled}
-          >
-            {finalSubmitOtpCTA?.text}
-          </button>
-        )}
+        <div className='rok__cta__container'>
+          {finalClearOtpCTA?.show && (
+            <button
+              type="button"
+              className={finalClearOtpCTA.className}
+              onClick={handleClearInputs}
+            >
+              {finalClearOtpCTA.text}
+            </button>
+          )}
+          {finalSubmitOtpCTA?.show && (
+            <button
+              className={finalSubmitOtpCTA?.className}
+              type="submit"
+              disabled={isVerifyDisabled}
+            >
+              {finalSubmitOtpCTA?.text}
+            </button>
+          )}
+        </div>
       </form>
     </section>
   )
