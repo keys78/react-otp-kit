@@ -1,5 +1,32 @@
-const Examples = () => {
-  return <div>Examples</div>
-}
+import BasicUsage from "../components/examples/basic-usage/BasicUsage";
+import WithSeparators from "../components/examples/with-seperators/WithSeparators";
 
-export default Examples
+const Examples = () => {
+  return (
+    <section className="max-w-[800px]">
+      <p>Bread Crumbs</p>
+      <div>
+        <h2 className="sm:text-[36px] text-[24px] font-semibold pt-2 pb-3 text-accent-3">
+          Examples
+        </h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa autem
+          totam earum fugiat excepturi voluptate, error sit officia laudantium
+          facere, possimus amet veniam optio odio at molestiae harum iusto
+          vitae.
+        </p>
+      </div>
+      <BasicUsage />
+      <WithSeparators />
+      <div id="autofocus" className="h-[200px] w-full bg-red-300 mt-[800px]">
+        <h1>Auto focus</h1>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis
+        distinctio cum pariatur ipsam perspiciatis nostrum quia eligendi
+        nesciunt minus qui illo neque voluptates voluptate, earum eum repellat
+        temporibus numquam. Facilis.
+      </div>
+    </section>
+  );
+};
+
+export default Examples;

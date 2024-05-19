@@ -1,13 +1,16 @@
 {
-  "name": "react-otp-ui",
-  "private": true,
-  "version": "0.0.0",
+  "name": "react-otp-kit",
+  "private": false,
+  "version": "0.1.0",
   "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "bundle": "tsup src/index.tsx"
   },
   "dependencies": {
     "axios": "^1.6.8",
@@ -20,13 +23,32 @@
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
+    "esbuild-style-plugin": "^1.6.3",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
     "prettier": "^3.2.5",
+    "tsup": "^8.0.2",
     "typescript": "^5.2.2",
     "vite": "^5.2.0"
+  },
+  "author": "Emmanuel Onyeyaforo",
+  "license": "MIT",
+  "keywords": [
+    "otp",
+    "OTP",
+    "react-otp",
+    "react-otp-input",
+    "react-otp-ui",
+    "kit",
+    "one-time-password",
+    "react"
+  ],
+  "homepage": "https://react-otp-kit.vercel.app/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keys78/react-otp-kit/"
   }
 }
