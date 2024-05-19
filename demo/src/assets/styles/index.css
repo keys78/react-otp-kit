@@ -78,7 +78,6 @@ html { scroll-behavior: smooth;}
   .rok__cta__container button:disabled { cursor: not-allowed; }
 
 
-
   /* Package Styles Extras -  Not compiled in the package */
 .rok__submit_button { background: #7846ee; color: #fbfbfb; font-weight: 400; transition: all 0.5s ease; }
 .rok__submit_button:disabled { background: #444444; transition: all 0.5s ease; opacity: 0.5;} 
