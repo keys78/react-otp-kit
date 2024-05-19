@@ -6,7 +6,7 @@ import { Tabs } from "../Tab";
 interface ExamplesTemplateProps {
   id: string;
   title: string;
-  description: string;
+  description: React.ReactNode;
   templateContent: React.ReactNode;
   codeContent: string;
 }
@@ -37,15 +37,17 @@ const ExamplesTemplate: React.FC<ExamplesTemplateProps> = ({
 
   return (
     <section id={id} className="w-full pt-20">
-      <h1 className="sm:text-[28px] text-[22px] font-bold lato text-accent-3">{title}</h1>
-      <div className="pt-2 mb-6">{description}</div>
+      <h1 className="sm:text-[28px] text-[22px] font-bold lato text-accent-3">
+        {title}
+      </h1>
+      <div className="pt-2 mb-6 leading-7">{description}</div>
       <>
         <Tabs
           tabs={[
             {
               label: "Preview",
               content: (
-                <div className="h-[600px] w-full bg-red-500 flex items-center justify-center">
+                <div className="relative h-[400px] w-full bg-accent-7 rounded-md border border-accent-1 flex items-center justify-center">
                   {templateContent}
                 </div>
               ),
@@ -53,7 +55,7 @@ const ExamplesTemplate: React.FC<ExamplesTemplateProps> = ({
             {
               label: "Code",
               content: (
-                <div className="border border-baseTwo rounded-[10px] relative">
+                <div className="border border-accent-1 rounded-[10px] relative">
                   <SyntaxHighlighter
                     language="jsx"
                     customStyle={customSyntaxHighlighterStyle}

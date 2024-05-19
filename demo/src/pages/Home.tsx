@@ -42,7 +42,7 @@ const Home = () => {
         </div>
       </div>
       <div className="flex md:flex-row flex-col items-center justify-between md:space-x-5 md:space-y-0 space-y-5 md:py-20 py-10">
-        <div className="bg-accent-1 rounded-[10px] pt-4 pb-6 px-6 w-full">
+        <div className="bg-accent-1 rounded-[10px] pt-4 pb-6 sm:px-6 px-3 w-full">
           <h3 className="lato font-semibold pb-2 text-[20px]">
             Easy Integration
           </h3>
@@ -51,14 +51,14 @@ const Home = () => {
             existing systems.
           </p>
         </div>
-        <div className="bg-accent-1 rounded-[10px] pt-4 pb-6 px-6 w-full">
+        <div className="bg-accent-1 rounded-[10px] pt-4 pb-6 sm:px-6 px-3 w-full">
           <h3 className="lato font-semibold pb-2 text-[20px]">Treeshakeable</h3>
           <p>
             Necessary parts of the code in your final bundle, for file size /
             performance optimization
           </p>
         </div>
-        <div className="bg-accent-1 rounded-[10px] pt-4 pb-6 px-6 w-full">
+        <div className="bg-accent-1 rounded-[10px] pt-4 pb-6 sm:px-6 px-3 w-full">
           <h3 className="lato font-semibold pb-2 text-[20px]">Modifiable</h3>
           <p>
             Modular component, easy to modify and customize according to your

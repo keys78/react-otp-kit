@@ -4,47 +4,51 @@
 
 @layer base {
   :root {
-    --accentCodeBox: rgb(245, 245, 246);
-    --accentCode: hsl(288, 3%, 30%);
-    --accent2: hsl(287, 4%, 45%);
-    --accent3: hsl(265, 11%, 22%);
-    --accent4: hsl(0, 0%, 19%);
-    --baseFour: hsl(0, 0%, 100%);
+    --accent7: #f5f5f6;
+    --accentCodeBox: #f5f5f6;
+    --accentCode: #4e4a4f;
+    --accent2: #756e77;
+    --accent3: #37323e;
+    --accent4: #303030;
+    --baseFour: #ffffff;
     --baseTwo: #71717A;
     --accent1: #f4f4f4;
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --accentCodeBox: rgb(24 24 27);
-      --accentCode: hsl(0, 3%, 71%);
-      --accent2: hsl(0, 1%, 72%);
-      --accent3: hsl(0, 0%, 87%);
-      --accent4: hsl(0, 0%, 90%);
-      --baseFour: hsl(0, 0%, 0%);
+      --accent7: #18181b;
+      --accentCodeBox: #18181b;
+      --accentCode: #b7b3b3;
+      --accent2: #b8b7b7;
+      --accent3: #dedede;
+      --accent4: #e6e6e6;
+      --baseFour: #000000;
       --baseTwo: #150101;
       --accent1: #181818;
     }
   }
 
   :root[data-theme='dark'] {
-    --accentCodeBox: rgb(24 24 27);    
-    --accentCode: hsl(0, 3%, 71%);    
-    --accent2: hsl(0, 1%, 72%);
-    --accent3: hsl(0, 0%, 87%);
-    --accent4: hsl(0, 0%, 90%);
-    --baseFour: hsl(0, 0%, 0%);
+    --accent7: #18181b;
+    --accentCodeBox: #18181b;    
+    --accentCode: #b7b3b3;    
+    --accent2: #b8b7b7;
+    --accent3: #dedede;
+    --accent4: #e6e6e6;
+    --baseFour: #000000;
     --baseTwo: #150101;
     --accent1: #181818;
   }
 
   :root[data-theme='light'] {
-    --accentCodeBox: rgb(245, 245, 246);
-    --accentCode: hsl(288, 3%, 30%);
-    --accent2: hsl(287, 4%, 45%);
-    --accent3: hsl(265, 11%, 22%);
-    --accent4: hsl(0, 0%, 19%);
-    --baseFour: hsl(0, 0%, 100%);
+    --accent7: #f5f5f6;
+    --accentCodeBox: #f5f5f6;
+    --accentCode: #4e4a4f;
+    --accent2: #756e77;
+    --accent3: #37323e;
+    --accent4: #303030;
+    --baseFour: #ffffff;
     --baseTwo: #71717A;
     --accent1: #f4f4f4;
   }
@@ -56,6 +60,8 @@
   body {
     @apply max-w-[1920px] mx-auto;
     font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 300;
+    font-weight: 350;
   }
+  input { all: unset; background: var(--baseFour);}
+  code { background: var(--accent1); padding:2px 5px 2px 5px; border-radius: 5px; color: var(--accent3);}
 }

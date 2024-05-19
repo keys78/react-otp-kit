@@ -3,10 +3,82 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+JP:wght@100..900&display=swap');
 
 html { scroll-behavior: smooth;}
+.sono { font-family: 'Sono', monospace; }
+.lato { font-family: 'Lato', sans-serif; }
 
-.sono {
-  font-family: 'Sono', monospace;
-}
-.lato {
-  font-family: 'Lato', sans-serif;
-}
+
+/* PACKAGE STYLES CLONE */
+/* form- input group *//* Chrome, Safari, Edge, Opera *//* Firefox */
+.rok__form .rok__input__group { display: flex; align-items: center; justify-content: center;}
+.rok__input__group { display: flex; align-items: center; column-gap: 20px; box-sizing: border-box; }
+  .rok__input__group .rok__input--defaultStyles { width: 40px; height: 40px; border: 1px solid #494d57; text-align: center; border-radius: 8px;}
+  .rok__input__group .rok__input--defaultStyles:disabled { cursor: not-allowed; }
+  .rok__input__group .rok__input--defaultStyles::-webkit-outer-spin-button,
+  .rok__input__group .rok__input--defaultStyles::-webkit-inner-spin-button {  -webkit-appearance: none;  margin: 0; }
+  .rok__input__group .rok__input-defaultStyles[type=number] { -moz-appearance: textfield; }
+  .rok__input__group .rok__defaultFill { border: 1px solid #07c307;}
+
+  /* curved variant - className: rok__input--variant1 */
+  .rok__input__group .rok__input--variant1 { width: 40px; height: 40px; border: 2px solid; text-align: center; border-radius: 8px;}
+  .rok__input__group .rok__input--variant1:disabled { cursor: not-allowed; }
+  .rok__input__group .rok__input--variant1::-webkit-outer-spin-button,
+  .rok__input__group .rok__input--variant1::-webkit-inner-spin-button {  -webkit-appearance: none;  margin: 0; }
+  .rok__input__group .rok__input-variant1[type=number] { -moz-appearance: textfield; }
+
+  /* curved variant - className: rok__input--variant2 */
+  .rok__input__group .rok__input--variant2 { all: unset; width: 50px; height: 50px; border: 2px solid; text-align: center; border-radius: 100%;}
+  .rok__input__group .rok__input--variant2:disabled { cursor: not-allowed; }
+  .rok__input__group .rok__input--variant2::-webkit-outer-spin-button,
+  .rok__input__group .rok__input--variant2::-webkit-inner-spin-button {  -webkit-appearance: none;  margin: 0; }
+  .rok__input__group .rok__input-variant2[type=number] { -moz-appearance: textfield; }
+
+  /* curved variant - className: rok__input--variant3 */
+  .rok__input__group .rok__input--variant3 { all: unset; width: 50px; height: 50px; border-bottom: 2px solid; text-align: center;}
+  .rok__input__group .rok__input--variant3:disabled { cursor: not-allowed; }
+  .rok__input__group .rok__input--variant3::-webkit-outer-spin-button,
+  .rok__input__group .rok__input--variant3::-webkit-inner-spin-button {  -webkit-appearance: none;  margin: 0; }
+  .rok__input__group .rok__input-variant3[type=number] { -moz-appearance: textfield; }
+
+  /* double-edge variant - className: rok__input--variant4 */
+  .rok__input__group .rok__input--variant4 { all: unset; width: 50px; height: 50px; border: 2px solid; text-align: center;}
+  .rok__input__group .rok__input--variant4:first-of-type { border-top-left-radius: 20px; border-bottom-left-radius: 20px; }
+  .rok__input__group .rok__input--variant4:last-of-type { border-top-right-radius: 20px; border-bottom-right-radius: 20px; }
+  .rok__input__group .rok__input--variant4:disabled { cursor: not-allowed; }
+  .rok__input__group .rok__input--variant4::-webkit-outer-spin-button,
+  .rok__input__group .rok__input--variant4::-webkit-inner-spin-button {  -webkit-appearance: none;  margin: 0; }
+  .rok__input__group .rok__input-variant4[type=number] { -moz-appearance: textfield; }
+
+  /* curved variant - className: rok__input--variant5 */
+  .rok__input__group .rok__input--variant5 { all: unset; width: 50px; height: 50px; border: 2px solid; text-align: center; border-radius: 42px;}
+  .rok__input__group .rok__input--variant5:first-of-type { border-top-right-radius: 20px; border-bottom-right-radius: 120px; }
+  .rok__input__group .rok__input--variant5:last-of-type { border-top-left-radius: 120px; border-bottom-left-radius: 20px; }
+  .rok__input__group .rok__input--variant5:disabled { cursor: not-allowed; }
+  .rok__input__group .rok__input--variant5::-webkit-outer-spin-button,
+  .rok__input__group .rok__input--variant5::-webkit-inner-spin-button {  -webkit-appearance: none;  margin: 0; }
+  .rok__input__group .rok__input-variant5[type=number] { -moz-appearance: textfield; }
+
+  /* curved variant - className: rok__input--variant6 */
+  .rok__input__group .rok__input--variant6 { all: unset; width: 50px; height: 50px; border: 2px solid; text-align: center; border-radius: 42px;}
+  .rok__input__group .rok__input--variant6:nth-of-type(even) { border-top-right-radius: 20px; border-bottom-right-radius: 120px; }
+  .rok__input__group .rok__input--variant6:nth-of-type(odd) { border-top-left-radius: 120px; border-bottom-left-radius: 20px; }
+  .rok__input__group .rok__input--variant6:disabled { cursor: not-allowed; }
+  .rok__input__group .rok__input--variant6::-webkit-outer-spin-button,
+  .rok__input__group .rok__input--variant6::-webkit-inner-spin-button {  -webkit-appearance: none;  margin: 0; }
+  .rok__input__group .rok__input-variant6[type=number] { -moz-appearance: textfield; }
+
+  /* fill types- className: onfill__type1, onfill__type2, onfill__variant3  */
+  .rok__input__group .onfill__type1 { border: 2px solid #07c307 !important; }
+  .rok__input__group .onfill__type2 { background: #07c3071b !important; border: 2px solid #07c307 !important; }
+  .rok__input__group .onfill__variant3 { border-bottom: 2px solid #07c307 !important; }
+
+
+/* button styles */
+.rok__cta__container { display: flex; align-items: center; justify-content: space-around; padding-top: 60px; }
+  .rok__cta__container button { padding: 10px 40px; width: fit-content; cursor: pointer; min-width: 100px; border-radius: 8px;}
+  .rok__cta__container button:disabled { cursor: not-allowed; }
+
+
+
+  /* Package Styles Extras -  Not compiled in the package */
+.rok__submit_button { background: #7846ee; color: #fbfbfb; font-weight: 400; transition: all 0.5s ease; }
+.rok__submit_button:disabled { background: #444444; transition: all 0.5s ease; opacity: 0.5;} 

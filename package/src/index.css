@@ -1,5 +1,4 @@
-/* input group *//* Chrome, Safari, Edge, Opera *//* Firefox */
-
+/* form- input group *//* Chrome, Safari, Edge, Opera *//* Firefox */
 .rok__form .rok__input__group { display: flex; align-items: center; justify-content: center;}
 .rok__input__group { display: flex; align-items: center; column-gap: 20px; box-sizing: border-box; }
   .rok__input__group .rok__input--defaultStyles { width: 40px; height: 40px; border: 1px solid; text-align: center; border-radius: 8px;}
@@ -57,7 +56,7 @@
   .rok__input__group .rok__input--variant6::-webkit-inner-spin-button {  -webkit-appearance: none;  margin: 0; }
   .rok__input__group .rok__input-variant6[type=number] { -moz-appearance: textfield; }
 
-  /* fill types */
+  /* fill types- className: onfill__type1, onfill__type2, onfill__variant3  */
   .rok__input__group .onfill__type1 { border: 2px solid #07c307 !important; }
   .rok__input__group .onfill__type2 { background: #07c3071b !important; border: 2px solid #07c307 !important; }
   .rok__input__group .onfill__variant3 { border-bottom: 2px solid #07c307 !important; }
