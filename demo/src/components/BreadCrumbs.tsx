@@ -10,21 +10,13 @@ const BreadCrumbs = () => {
   const pathname = location.pathname.endsWith("/")
     ? location.pathname.slice(0, -1)
     : location.pathname;
-  const pathHash = location.hash.substring(1);
+
   const paths = pathname.split("/");
 
-  if (pathHash) {
-    paths.push(pathHash);
-  }
-
   const navigateTo = (index: number) => {
-    let path = "/" + paths[index];
-    if (index === paths.length - 1 && pathHash) {
-      path = `/${paths.slice(0, -1).join("/")}${location.hash}`;
-    }
+    const path = "/" + paths[index];
     navigate(path);
     setActivePath('/' + paths[index])
-
   };
 
   useEffect(() => {
@@ -36,7 +28,7 @@ const BreadCrumbs = () => {
       {paths?.map((path, index) => (
         <React.Fragment key={index}>
           <span
-            className={`text-[14px] ${
+            className={`text-[16px] ${
               index !== paths?.length - 1 && "cursor-pointer"
             } ${"/" + path === activePath && "active"}`}
             onClick={() => navigateTo(index)}
