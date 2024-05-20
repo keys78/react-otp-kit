@@ -1,6 +1,6 @@
 # react-otp-kit
 
- [![npm](https://img.shields.io/npm/v/react-otp-kit)]()  [![license](https://img.shields.io/npm/l/react-otp-kit)]()  [![issues](https://img.shields.io/github/issues/keys78/react-otp-kit)]() 
+[![npm](https://img.shields.io/npm/v/react-otp-kit)]() [![license](https://img.shields.io/npm/l/react-otp-kit)]() [![issues](https://img.shields.io/github/issues/keys78/react-otp-kit)]()
 
 A lightweight and versatile component designed to simplify the implementation of OTP (One-Time Password) input fields in React applications for desktop and mobile.
 
@@ -11,6 +11,7 @@ A lightweight and versatile component designed to simplify the implementation of
 ## Installation
 
 To install the latest stable version:
+
 ```sh
 npm install --save react-otp-kit
 ```
@@ -20,7 +21,7 @@ npm install --save react-otp-kit
 ```jsx
 import { useState } from "react";
 import { OtpKit } from "react-otp-kit";
-import "react-otp-kit/dist/styles.css";
+import "react-otp-kit/dist/index.css";
 
 function App() {
   const [otp, setOtp] = useState("");
@@ -31,70 +32,65 @@ function App() {
 
   return (
     <>
-      <OtpKit
-        value={otp}
-        onChange={handleChange}
-        type={"number"}
-      />
+      <OtpKit value={otp} onChange={handleChange} type={"number"} />
     </>
   );
-};
+}
 
 export default App;
 ```
-
 
 ## API
 
 ### Props
 
-| Name             | Type                                                   | Required | Default                              | Description                                                                                                                                                         | Status       |
-|------------------|--------------------------------------------------------|----------|--------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
-| value            | `string`                                               | Yes      | -                                    | The current value of the OTP input.                                                                                                                                 | Stable       |
-| onChange         | `(value: string) => void`                              | Yes      | -                                    | Callback function triggered when the OTP value changes.                                                                                                             | Stable       |
-| numOfInputs      | `number`                                               | No       | `6`                                  | Number of OTP input fields to display.                                                                                                                               | Stable       |
-| placeholder      | `string`                                               | No       | -                                    | Placeholder text for the OTP input fields.                                                                                                                           | Stable       |
-| autoSubmit       | `boolean`                                              | No       | `false`                              | Automatically submit the OTP when all input fields are filled.                                                                                                       | Stable       |
-| autoFocus        | `boolean`                                              | No       | `true`                               | Automatically focus on the first OTP input field on component mount.                                                                                                 | Stable       |
-| separator        | `Object`                                               | No       | -                                    | Configuration for displaying separators between OTP input fields.                                                                                                    | Stable |
-| separator.show   | `boolean`                                              | No       | -                                    | Show separators between input fields.                                                                                                                                | Stable |
-| separator.value  | `string`                                               | No       | -                                    | The value to display as a separator.                                                                                                                                 | Stable |
-| separator.intervals | `number`                                           | Yes      | -                                    | The intervals at which separators should be displayed.                                                                                                               | Stable |
-| separator.className | `string`                                           | No       | -                                    | CSS class for styling the separator.                                                                                                                                 | Stable |
-| submitOtpButton  | `Object`                                               | No       | Default Submit Button Config         | Configuration for the submit OTP button.                                                                                                                             | Stable       |
-| submitOtpButton.show | `boolean`                                         | No       | `true`                               | Show the submit OTP button.                                                                                                                                         | Stable       |
-| submitOtpButton.text | `string`                                          | No       | `Submit`                             | Text to display on the submit OTP button.                                                                                                                            | Stable       |
-| submitOtpButton.className | `string`                                     | No       | `rok__submit_button`                 | CSS class for styling the submit OTP button.                                                                                                                         | Stable       |
-| clearOtpButton   | `Object`                                               | No       | Default Clear Button Config          | Configuration for the clear OTP button.                                                                                                                              | Stable       |
-| clearOtpButton.show | `boolean`                                          | No       | `false`                              | Show the clear OTP button.                                                                                                                                          | Stable       |
-| clearOtpButton.text | `string`                                           | No       | `Clear`                              | Text to display on the clear OTP button.                                                                                                                             | Stable       |
-| clearOtpButton.className | `string`                                      | No       | `rok__clear_button`                  | CSS class for styling the clear OTP button.                                                                                                                          | Stable       |
-| type             | `"number" \| "text" \| "password"`                     | Yes      | -                                    | The type of the OTP input fields (number, text, or password).                                                                                                        | Stable       |
-| inputStyles      | `Object`                                               | No       | -                                    | Custom styles for the OTP input fields.                                                                                                                              | Stable       |
-| inputStyles.generalStyles | `string`                                     | No       | `rok__input--defaultStyles`          | General CSS class for styling the OTP input fields.                                                                                                                  | Stable       |
-| inputStyles.onFill | `string`                                            | No       | `rok__defaultFill`                   | CSS class for styling the OTP input fields when they are filled.                                                                                                     | Stable       |
+| Name                      | Type                               | Required | Default                      | Description                                                          | Status |
+| ------------------------- | ---------------------------------- | -------- | ---------------------------- | -------------------------------------------------------------------- | ------ |
+| value                     | `string`                           | Yes      | -                            | The current value of the OTP input.                                  | Stable |
+| onChange                  | `(value: string) => void`          | Yes      | -                            | Callback function triggered when the OTP value changes.              | Stable |
+| numOfInputs               | `number`                           | No       | `6`                          | Number of OTP input fields to display.                               | Stable |
+| placeholder               | `string`                           | No       | -                            | Placeholder text for the OTP input fields.                           | Stable |
+| autoSubmit                | `boolean`                          | No       | `false`                      | Automatically submit the OTP when all input fields are filled.       | Stable |
+| autoFocus                 | `boolean`                          | No       | `true`                       | Automatically focus on the first OTP input field on component mount. | Stable |
+| separator                 | `Object`                           | No       | -                            | Configuration for displaying separators between OTP input fields.    | Stable |
+| separator.show            | `boolean`                          | No       | -                            | Show separators between input fields.                                | Stable |
+| separator.value           | `string`                           | No       | -                            | The value to display as a separator.                                 | Stable |
+| separator.intervals       | `number`                           | Yes      | -                            | The intervals at which separators should be displayed.               | Stable |
+| separator.className       | `string`                           | No       | -                            | CSS class for styling the separator.                                 | Stable |
+| submitOtpButton           | `Object`                           | No       | Default Submit Button Config | Configuration for the submit OTP button.                             | Stable |
+| submitOtpButton.show      | `boolean`                          | No       | `true`                       | Show the submit OTP button.                                          | Stable |
+| submitOtpButton.text      | `string`                           | No       | `Submit`                     | Text to display on the submit OTP button.                            | Stable |
+| submitOtpButton.className | `string`                           | No       | `rok__submit_button`         | CSS class for styling the submit OTP button.                         | Stable |
+| clearOtpButton            | `Object`                           | No       | Default Clear Button Config  | Configuration for the clear OTP button.                              | Stable |
+| clearOtpButton.show       | `boolean`                          | No       | `false`                      | Show the clear OTP button.                                           | Stable |
+| clearOtpButton.text       | `string`                           | No       | `Clear`                      | Text to display on the clear OTP button.                             | Stable |
+| clearOtpButton.className  | `string`                           | No       | `rok__clear_button`          | CSS class for styling the clear OTP button.                          | Stable |
+| type                      | `"number" \| "text" \| "password"` | Yes      | -                            | The type of the OTP input fields (number, text, or password).        | Stable |
+| inputStyles               | `Object`                           | No       | -                            | Custom styles for the OTP input fields.                              | Stable |
+| inputStyles.generalStyles | `string`                           | No       | `rok__input--defaultStyles`  | General CSS class for styling the OTP input fields.                  | Stable |
+| inputStyles.onFill        | `string`                           | No       | `rok__defaultFill`           | CSS class for styling the OTP input fields when they are filled.     | Stable |
 
 ### ResendCode Props
 
-| Name                        | Type                                                   | Required | Default                          | Description                                                                                                                                                       | Status       |
-|-----------------------------|--------------------------------------------------------|----------|----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
-| resendOtpButton             | `Object`                                               | Yes      | -                                | Configuration for the resend OTP button.                                                                                                                           | Stable       |
-| resendOtpButton.localFunctions | `() => any`                                        | No       | -                                | Function to call for local OTP generation.                                                                                                                         | Stable       |
-| resendOtpButton.apiURL      | `string`                                               | No       | -                                | API URL for fetching a new OTP.                                                                                                                                   | Stable       |
-| resendOtpButton.initialCountdown | `number`                                         | No       | `60`                             | Initial countdown time for the resend button in seconds.                                                                                                           | Stable       |
-| resendOtpButton.show        | `boolean`                                              | No       | `true`                           | Show the resend OTP button.                                                                                                                                       | Stable       |
-| resendOtpButton.text        | `string`                                               | No       | `Resend code`                    | Text to display on the resend OTP button.                                                                                                                          | Stable       |
-| resendOtpButton.className   | `string`                                               | No       | `rok__resend_button`             | CSS class for styling the resend OTP button.                                                                                                                       | Stable       |
-| resendOtpButton.responseData | `(data: any) => void`                                | No       | -                                | Callback function to handle the response data from the OTP generation function or API.                                                                             | Stable       |
+| Name                             | Type                  | Required | Default              | Description                                                                            | Status |
+| -------------------------------- | --------------------- | -------- | -------------------- | -------------------------------------------------------------------------------------- | ------ |
+| resendOtpButton                  | `Object`              | Yes      | -                    | Configuration for the resend OTP button.                                               | Stable |
+| resendOtpButton.localFunctions   | `() => any`           | No       | -                    | Function to call for local OTP generation.                                             | Stable |
+| resendOtpButton.apiURL           | `string`              | No       | -                    | API URL for fetching a new OTP.                                                        | Stable |
+| resendOtpButton.initialCountdown | `number`              | No       | `60`                 | Initial countdown time for the resend button in seconds.                               | Stable |
+| resendOtpButton.show             | `boolean`             | No       | `true`               | Show the resend OTP button.                                                            | Stable |
+| resendOtpButton.text             | `string`              | No       | `Resend code`        | Text to display on the resend OTP button.                                              | Stable |
+| resendOtpButton.className        | `string`              | No       | `rok__resend_button` | CSS class for styling the resend OTP button.                                           | Stable |
+| resendOtpButton.responseData     | `(data: any) => void` | No       | -                    | Callback function to handle the response data from the OTP generation function or API. | Stable |
 
 ## ResendCode Button & Timer
-```jsx
 
+```jsx
 import { useState } from "react";
 import { OtpKitResendCode } from "react-otp-kit";
 
 function App() {
-   const [localOtp, setLocalOtp] = useState("");
+  const [localOtp, setLocalOtp] = useState("");
   const [apiOtp, setApiOtp] = useState("");
 
   const handleLocalResponseData = (data: any) => {
@@ -143,12 +139,13 @@ function App() {
       <p>Generated API OTP: {apiOtp}</p>
     </>
   );
-};
+}
 
-export default App
+export default App;
 ```
 
 ### ⚠️ Warning
+
 To ensure proper functionality, avoid overriding the following props on the input component returned from the renderInput prop. Modifying these props can result in unexpected behavior:
 
 - `ref`
@@ -177,5 +174,6 @@ A big thank you to all the contributors who have helped make this project better
 [![Contributors](https://contrib.rocks/image?repo=keys78/react-otp-kit)](https://github.com/keys78/react-otp-kit/graphs/contributors)
 
 #### Contributors
+
 - [keys78](https://github.com/keys78)
 - [Hannahadora](https://github.com/Hannahadora)

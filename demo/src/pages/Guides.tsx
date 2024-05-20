@@ -25,8 +25,10 @@ const Guides: React.FC = () => {
           <code>length</code>, <code>autoSubmit</code>, and more.
         </p>
         <h4 className="text-lg font-semibold mb-2">Styles</h4>
-        <p className="mb-2 leading-8"> Ensure to import the styles from the dist folder <br />
-          <code>import "react-otp-kit/dist/styles.css";</code>
+        <p className="mb-2 leading-8">
+          {" "}
+          Ensure to import the styles from the dist folder <br />
+          <code>import "react-otp-kit/dist/index.css";</code>
         </p>
       </div>
       {/* Customization */}

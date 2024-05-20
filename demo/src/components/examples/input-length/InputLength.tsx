@@ -7,7 +7,8 @@ const InputLengthPage = () => {
   const description = (
     <div>
       Use the default number of provided inputs or easily customize the number
-      of inputs you need with the <code>numOfInputs</code> prop. Max length of the inputs can only be 100.
+      of inputs you need with the <code>numOfInputs</code> prop. Max length of
+      the inputs can only be 100.
     </div>
   );
 
@@ -32,33 +33,33 @@ const TemplateInputLength = () => {
 
   return (
     <div>
-        <p className="pb-2 text-center">5 inputs</p>
-        <OtpKit
-          value={otp}
-          onChange={handleChange}
-          numOfInputs={5}
-          submitOtpButton={{ show: false }}
-          type={"number"}
-          autoFocus={false}
-        />
-        <p className="pb-2 text-center">3 inputs</p>
-        <OtpKit
-          value={otp}
-          onChange={handleChange}
-          numOfInputs={3}
-          submitOtpButton={{ show: false }}
-          type={"number"}
-          autoFocus={false}
-        />
-        <p className="pb-2 text-center">4 inputs</p>
-        <OtpKit
-          value={otp}
-          onChange={handleChange}
-          numOfInputs={4}
-          submitOtpButton={{ show: false }}
-          type={"number"}
-          autoFocus={false}
-        />
+      <p className="pb-2 text-center">5 inputs</p>
+      <OtpKit
+        value={otp}
+        onChange={handleChange}
+        numOfInputs={5}
+        submitOtpButton={{ show: false }}
+        type={"number"}
+        autoFocus={false}
+      />
+      <p className="pb-2 text-center">3 inputs</p>
+      <OtpKit
+        value={otp}
+        onChange={handleChange}
+        numOfInputs={3}
+        submitOtpButton={{ show: false }}
+        type={"number"}
+        autoFocus={false}
+      />
+      <p className="pb-2 text-center">4 inputs</p>
+      <OtpKit
+        value={otp}
+        onChange={handleChange}
+        numOfInputs={4}
+        submitOtpButton={{ show: false }}
+        type={"number"}
+        autoFocus={false}
+      />
     </div>
   );
 };
@@ -66,7 +67,7 @@ const TemplateInputLength = () => {
 export const inputLengthTemp = `
 import { useState } from "react";
 import { OtpKit } from "react-otp-kit";
-import "react-otp-kit/dist/styles.css";
+import "react-otp-kit/dist/index.css";
 
 function App() {
   const [otp, setOtp] = useState("");

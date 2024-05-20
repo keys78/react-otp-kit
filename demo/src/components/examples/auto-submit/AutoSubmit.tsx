@@ -8,7 +8,8 @@ const AutoSubmitPage = () => {
     <div>
       <p>
         The <code>autoSubmit</code> prop allows for automatic submission of the
-        OTP once all input fields are filled. This can be useful in mobile SMS and banking apps.
+        OTP once all input fields are filled. This can be useful in mobile SMS
+        and banking apps.
       </p>
       <br />
       <p>
@@ -57,7 +58,7 @@ const TemplateAutoSubmit = () => {
 export const autoSubmitTemp = `
 import { useState } from "react";
 import { OtpKit } from "react-otp-kit";
-import "react-otp-kit/dist/styles.css";
+import "react-otp-kit/dist/index.css";
 
 function App() {
   const [otp, setOtp] = useState("");

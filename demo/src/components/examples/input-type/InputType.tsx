@@ -85,7 +85,7 @@ const TemplateInputType = () => {
 export const inputTypeTemp = `
 import { useState } from "react";
 import { OtpKit } from "react-otp-kit";
-import "react-otp-kit/dist/styles.css";
+import "react-otp-kit/dist/index.css";
 
 function App() {
   const [otp, setOtp] = useState("");

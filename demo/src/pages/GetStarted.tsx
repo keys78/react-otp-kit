@@ -35,7 +35,7 @@ const GetStarted: React.FC = () => {
   const code = `
   import { useState } from "react";
   import { OtpKit } from "react-otp-kit";
-  import "react-otp-kit/dist/styles.css";
+  import "react-otp-kit/dist/index.css";
 
   function App() {
     const [otp, setOtp] = useState("");
@@ -141,7 +141,8 @@ const GetStarted: React.FC = () => {
             },
           ]}
         />
-      </div>{" "} <br />
+      </div>{" "}
+      <br />
       <div className="rounded-md relative">
         <SyntaxHighlighter
           language="jsx"
