@@ -108,6 +108,7 @@ const TemplateSeparators = () => {
 export const inputLengthTemp = `
 import { useState } from "react";
 import { OtpKit } from "react-otp-kit";
+import "react-otp-kit/dist/index.css";
 
 function App() {
   const [otp, setOtp] = useState("");

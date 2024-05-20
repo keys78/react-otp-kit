@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable prettier/prettier */
 import React, {
   useState,
   useRef,
@@ -127,21 +126,28 @@ const OtpKit: React.FC<OtpKitProps> = ({
     setIsVerifyDisabled(otp.some((digit) => digit === ''))
   }, [otp])
 
-  //   Handle input change event
+  //handling input changes for different types
   const handleChange = (
     index: number,
     event: ChangeEvent<HTMLInputElement>,
   ) => {
     const { value } = event.target
     const newOtp = [...otp]
-    newOtp[index] = value.charAt(value.length - 1)
+
+    if (type === 'number') {
+      // cmake sure only the last character is considered and it is a digit
+      if (/^\d*$/.test(value)) {
+        newOtp[index] = value.charAt(value.length - 1)
+      }
+    } else {
+      // Allow any character for text input type
+      newOtp[index] = value
+    }
     setOtp(newOtp)
     onChange(newOtp.join(''))
 
-    // Focus on the next empty input field
-    const nextEmptyIndex = newOtp.findIndex((digit) => digit === '')
-    if (nextEmptyIndex !== -1) {
-      inputRefs.current[nextEmptyIndex]?.focus()
+    if (value && index < otp.length - 1) {
+      inputRefs.current[index + 1]?.focus()
     }
   }
 
@@ -189,6 +195,9 @@ const OtpKit: React.FC<OtpKitProps> = ({
       }
       event.preventDefault()
     }
+    // else if (!/^\d$/.test(key)) {
+    //   event.preventDefault(); // Prevent non-numeric input
+    // }
   }
 
   // Handle paste event
@@ -236,7 +245,7 @@ const OtpKit: React.FC<OtpKitProps> = ({
           {otp.map((digit, index) => (
             <React.Fragment key={index}>
               <input
-                type={type}
+                type={type === 'number' ? 'tel' : type}
                 value={digit}
                 placeholder={placeholder}
                 onChange={(e) => handleChange(index, e)}
@@ -244,8 +253,11 @@ const OtpKit: React.FC<OtpKitProps> = ({
                 onPaste={handlePaste}
                 maxLength={1}
                 disabled={index !== 0 && otp[index - 1] === ''}
-                className={`${inputStyles?.generalStyles || 'rok__input--defaultStyles'} ${digit ? inputStyles?.onFill || 'rok__defaultFill' : ''}`}
+                className={`${
+                  inputStyles?.generalStyles || 'rok__input--defaultStyles'
+                } ${digit ? inputStyles?.onFill || 'rok__defaultFill' : ''}`}
                 ref={(el) => (inputRefs.current[index] = el)}
+                inputMode={type === 'number' ? 'numeric' : undefined}
                 autoComplete="one-time-code" //for SMS mobile suggestions
                 aria-label={`Digit ${index + 1}`}
               />

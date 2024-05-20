@@ -32,14 +32,10 @@ function App() {
 
   return (
     <>
-      <OtpKit
-        value={otp}
-        onChange={handleChange}
-        type={"number"}
-      />
+      <OtpKit value={otp} onChange={handleChange} type={"number"} />
     </>
   );
-};
+}
 
 export default App;
 ```
@@ -90,12 +86,11 @@ export default App;
 ## ResendCode Button & Timer
 
 ```jsx
-
 import { useState } from "react";
 import { OtpKitResendCode } from "react-otp-kit";
 
 function App() {
-   const [localOtp, setLocalOtp] = useState("");
+  const [localOtp, setLocalOtp] = useState("");
   const [apiOtp, setApiOtp] = useState("");
 
   const handleLocalResponseData = (data: any) => {
@@ -144,9 +139,9 @@ function App() {
       <p>Generated API OTP: {apiOtp}</p>
     </>
   );
-};
+}
 
-export default App
+export default App;
 ```
 
 ### ⚠️ Warning

@@ -15,7 +15,7 @@ const ClearButtonOptionsPage = () => {
       <p>
         You can customize the button text using the <code>text</code> property
         within the <code>clearOtpButton</code> prop. Additionally, the button's
-        styles can be overridden 
+        styles can be overridden
       </p>
       <br />
       <ul>
@@ -76,6 +76,7 @@ const TemplateClearButtonOptions = () => {
 export const clearButtonOptionsTemp = `
 import { useState } from "react";
 import { OtpKit } from "react-otp-kit";
+import "react-otp-kit/dist/index.css";
 
 function App() {
   const [otp, setOtp] = useState("");

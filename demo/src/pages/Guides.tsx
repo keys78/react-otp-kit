@@ -9,7 +9,6 @@ const Guides: React.FC = () => {
         <div className="w-[10%] h-[5px] rounded-md bg-gradient-to-r from-purple-500 to-pink-500 mt-3"></div>
       </h2>
 
-
       {/* Usage Guide */}
       <div className="mb-6">
         <h3 className="text-xl font-semibold mb-2">Usage Guide</h3>
@@ -25,15 +24,11 @@ const Guides: React.FC = () => {
           such as <code>value</code>, <code>onChange</code>, <code>type</code>,{" "}
           <code>length</code>, <code>autoSubmit</code>, and more.
         </p>
-        <h4 className="text-lg font-semibold mb-2">Examples</h4>
+        <h4 className="text-lg font-semibold mb-2">Styles</h4>
         <p className="mb-2 leading-8">
-          Examples of different configurations and use cases, illustrating how
-          to use the component in various scenarios.
-        </p>
-        <h4 className="text-lg font-semibold mb-2">Best Practices</h4>
-        <p className="mb-2 leading-8">
-          Tips and best practices for integrating the OTP Kit component into
-          your projects effectively and efficiently.
+          {" "}
+          Ensure to import the styles from the dist folder <br />
+          <code>import "react-otp-kit/dist/index.css";</code>
         </p>
       </div>
       {/* Customization */}

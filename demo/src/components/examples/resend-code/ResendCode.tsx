@@ -53,8 +53,13 @@ const ResendCodePage = () => {
       <p>
         In the example below, we simulated scenarios where the otp is requested
         from an a server side and where we generate them locally on the client
-        side. We are using <a target="blank" href="https://designer.mocky.io/"><code>mocky.io</code> </a> static endpoint here so our api would always return 123456. To have a better understanding,
-        investigate the network tab on chrome dev tools or your local browser.
+        side. We are using{" "}
+        <a target="blank" href="https://designer.mocky.io/">
+          <code>mocky.io</code>{" "}
+        </a>{" "}
+        static endpoint here so our api would always return 123456. To have a
+        better understanding, investigate the network tab on chrome dev tools or
+        your local browser.
       </p>
     </div>
   );
@@ -98,7 +103,9 @@ const TemplateResendCode = () => {
   return (
     <div className="flex flex-col space-y-10 items-center justify-center">
       <div className="text-center">
-        <p  className="pb-1">Generated Local OTP: {localOtp ? localOtp : 'waiting...'}</p>
+        <p className="pb-1">
+          Generated Local OTP: {localOtp ? localOtp : "waiting..."}
+        </p>
         <OtpKitResendCode
           resendOtpButton={{
             localFunctions: generateRandomDigits,
@@ -110,7 +117,9 @@ const TemplateResendCode = () => {
         />
       </div>
       <div className="text-center">
-        <p  className="pb-1">Generated API OTP: {apiOtp ? apiOtp : 'waiting...'}</p>
+        <p className="pb-1">
+          Generated API OTP: {apiOtp ? apiOtp : "waiting..."}
+        </p>
         <OtpKitResendCode
           resendOtpButton={{
             apiURL:
@@ -129,6 +138,7 @@ const TemplateResendCode = () => {
 export const resendCodeTemp = `
 import { useState } from "react";
 import { OtpKitResendCode } from "react-otp-kit";
+import "react-otp-kit/dist/index.css";
 
 function App() {
    const [localOtp, setLocalOtp] = useState("");

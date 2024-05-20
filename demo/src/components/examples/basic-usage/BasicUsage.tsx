@@ -6,8 +6,11 @@ const BasicUsagePage = () => {
   const title = "Basic Usage";
   const description = (
     <div>
-      Easily integrate OTP functionality with minimal setup. Use the <code>onChange</code> prop to handle OTP value changes by passing a
-      function like <code>setOtp</code>. Alternatively, we can call the <code>setOtp</code> directly within <code>onChange</code> to get the values.
+      Easily integrate OTP functionality with minimal setup. Use the{" "}
+      <code>onChange</code> prop to handle OTP value changes by passing a
+      function like <code>setOtp</code>. Alternatively, we can call the{" "}
+      <code>setOtp</code> directly within <code>onChange</code> to get the
+      values.
     </div>
   );
 
@@ -42,6 +45,7 @@ const TemplateBasic = () => {
 export const basicUsageTemp = `
 import { useState } from "react";
 import { OtpKit } from "react-otp-kit";
+import "react-otp-kit/dist/index.css";
 
 function App() {
   const [otp, setOtp] = useState("");
@@ -69,6 +73,7 @@ Alternative Method...
 
 import { useState } from "react";
 import { OtpKit } from "react-otp-kit";
+import "react-otp-kit/dist/index.css";
 
 function App() {
   const [otp, setOtp] = useState("");
