@@ -47,7 +47,7 @@ const ExamplesTemplate: React.FC<ExamplesTemplateProps> = ({
             {
               label: "Preview",
               content: (
-                <div className="relative h-[400px] w-full bg-accent-7 rounded-md border border-accent-1 flex items-center justify-center">
+                <div className="relative min-h-[400px] px-4 py-6 w-full bg-accent-7 rounded-md border border-accent-1 flex items-center justify-center">
                   {templateContent}
                 </div>
               ),

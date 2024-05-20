@@ -19,7 +19,7 @@
     :root {
       --accent7: #18181b;
       --accentCodeBox: #18181b;
-      --accentCode: #b7b3b3;
+      --accentCode: #e0cef9;
       --accent2: #b8b7b7;
       --accent3: #dedede;
       --accent4: #e6e6e6;
@@ -32,7 +32,7 @@
   :root[data-theme='dark'] {
     --accent7: #18181b;
     --accentCodeBox: #18181b;    
-    --accentCode: #b7b3b3;    
+    --accentCode: #e0cef9;    
     --accent2: #b8b7b7;
     --accent3: #dedede;
     --accent4: #e6e6e6;
@@ -60,8 +60,8 @@
   body {
     @apply max-w-[1920px] mx-auto;
     font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 350;
+    font-weight: 300;
   }
   input { all: unset; background: var(--baseFour);}
-  code { background: var(--accent1); padding:2px 5px 2px 5px; border-radius: 5px; color: var(--accent3);}
+  code { background: var(--accent1); padding:2px 5px 2px 5px; border-radius: 5px; }
 }

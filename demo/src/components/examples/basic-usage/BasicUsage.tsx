@@ -27,14 +27,13 @@ const TemplateBasic = () => {
 
   const handleChange = (newOtp: string) => {
     setOtp(newOtp);
-    console.log("myOTP", newOtp);
   };
 
   return (
     <>
-      <OtpKit value={otp} onChange={handleChange} type={"text"} />
+      <OtpKit value={otp} onChange={handleChange} type={"number"} />
       <span className="absolute top-5 left-5 lato font-semibold">
-        OTP Value: {otp ? otp : "Awaiting input..."}
+        OTP Value: {otp ? otp : "Awaiting triggers..."}
       </span>
     </>
   );
@@ -56,7 +55,7 @@ function App() {
       <OtpKit
         value={otp}
         onChange={handleChange}
-        type={"text"}
+        type={"number"}
       />
     </>
   );

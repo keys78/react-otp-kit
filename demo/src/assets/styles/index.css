@@ -26,21 +26,21 @@ html { scroll-behavior: smooth;}
   .rok__input__group .rok__input-variant1[type=number] { -moz-appearance: textfield; }
 
   /* curved variant - className: rok__input--variant2 */
-  .rok__input__group .rok__input--variant2 { all: unset; width: 50px; height: 50px; border: 2px solid; text-align: center; border-radius: 100%;}
+  .rok__input__group .rok__input--variant2 { all: unset; width: 40px; height: 40px; border: 2px solid; text-align: center; border-radius: 100%;}
   .rok__input__group .rok__input--variant2:disabled { cursor: not-allowed; }
   .rok__input__group .rok__input--variant2::-webkit-outer-spin-button,
   .rok__input__group .rok__input--variant2::-webkit-inner-spin-button {  -webkit-appearance: none;  margin: 0; }
   .rok__input__group .rok__input-variant2[type=number] { -moz-appearance: textfield; }
 
   /* curved variant - className: rok__input--variant3 */
-  .rok__input__group .rok__input--variant3 { all: unset; width: 50px; height: 50px; border-bottom: 2px solid; text-align: center;}
+  .rok__input__group .rok__input--variant3 { all: unset; width: 40px; height: 40px; border-bottom: 2px solid; text-align: center;}
   .rok__input__group .rok__input--variant3:disabled { cursor: not-allowed; }
   .rok__input__group .rok__input--variant3::-webkit-outer-spin-button,
   .rok__input__group .rok__input--variant3::-webkit-inner-spin-button {  -webkit-appearance: none;  margin: 0; }
   .rok__input__group .rok__input-variant3[type=number] { -moz-appearance: textfield; }
 
   /* double-edge variant - className: rok__input--variant4 */
-  .rok__input__group .rok__input--variant4 { all: unset; width: 50px; height: 50px; border: 2px solid; text-align: center;}
+  .rok__input__group .rok__input--variant4 { all: unset; width: 40px; height: 40px; border: 2px solid; text-align: center;}
   .rok__input__group .rok__input--variant4:first-of-type { border-top-left-radius: 20px; border-bottom-left-radius: 20px; }
   .rok__input__group .rok__input--variant4:last-of-type { border-top-right-radius: 20px; border-bottom-right-radius: 20px; }
   .rok__input__group .rok__input--variant4:disabled { cursor: not-allowed; }
@@ -49,7 +49,7 @@ html { scroll-behavior: smooth;}
   .rok__input__group .rok__input-variant4[type=number] { -moz-appearance: textfield; }
 
   /* curved variant - className: rok__input--variant5 */
-  .rok__input__group .rok__input--variant5 { all: unset; width: 50px; height: 50px; border: 2px solid; text-align: center; border-radius: 42px;}
+  .rok__input__group .rok__input--variant5 { all: unset; width: 40px; height: 40px; border: 2px solid; text-align: center; border-radius: 42px;}
   .rok__input__group .rok__input--variant5:first-of-type { border-top-right-radius: 20px; border-bottom-right-radius: 120px; }
   .rok__input__group .rok__input--variant5:last-of-type { border-top-left-radius: 120px; border-bottom-left-radius: 20px; }
   .rok__input__group .rok__input--variant5:disabled { cursor: not-allowed; }
@@ -58,7 +58,7 @@ html { scroll-behavior: smooth;}
   .rok__input__group .rok__input-variant5[type=number] { -moz-appearance: textfield; }
 
   /* curved variant - className: rok__input--variant6 */
-  .rok__input__group .rok__input--variant6 { all: unset; width: 50px; height: 50px; border: 2px solid; text-align: center; border-radius: 42px;}
+  .rok__input__group .rok__input--variant6 { all: unset; width: 40px; height: 40px; border: 2px solid; text-align: center; border-radius: 42px;}
   .rok__input__group .rok__input--variant6:nth-of-type(even) { border-top-right-radius: 20px; border-bottom-right-radius: 120px; }
   .rok__input__group .rok__input--variant6:nth-of-type(odd) { border-top-left-radius: 120px; border-bottom-left-radius: 20px; }
   .rok__input__group .rok__input--variant6:disabled { cursor: not-allowed; }
@@ -66,9 +66,10 @@ html { scroll-behavior: smooth;}
   .rok__input__group .rok__input--variant6::-webkit-inner-spin-button {  -webkit-appearance: none;  margin: 0; }
   .rok__input__group .rok__input-variant6[type=number] { -moz-appearance: textfield; }
 
-  /* fill types- className: onfill__type1, onfill__type2, onfill__variant3  */
+  /* fill types- className: onfill__type1, onfill__type2, onfill__type3, onfill__variant3  */
   .rok__input__group .onfill__type1 { border: 2px solid #07c307 !important; }
   .rok__input__group .onfill__type2 { background: #07c3071b !important; border: 2px solid #07c307 !important; }
+  .rok__input__group .onfill__type3 { border: 2px solid #be0a0a !important; background: #be0a0a1b ; }
   .rok__input__group .onfill__variant3 { border-bottom: 2px solid #07c307 !important; }
 
 
@@ -78,6 +79,11 @@ html { scroll-behavior: smooth;}
   .rok__cta__container button:disabled { cursor: not-allowed; }
 
 
+
   /* Package Styles Extras -  Not compiled in the package */
 .rok__submit_button { background: #7846ee; color: #fbfbfb; font-weight: 400; transition: all 0.5s ease; }
 .rok__submit_button:disabled { background: #444444; transition: all 0.5s ease; opacity: 0.5;} 
+.resendbutton__styles { background: #7846ee; padding:10px 40px; border-radius: 10px; color: #fbfbfb; font-weight: 400; transition: all 0.5s ease; }
+.resendbutton__styles:disabled { background: #444444; transition: all 0.5s ease; opacity: 0.5; cursor: not-allowed;} 
+.whatever-classes { border-radius: 50px !important; background: #f3ff16; color: #000000; font-weight: 400; transition: all 0.5s ease; }
+.whatever-classes:disabled { opacity: 0.5;transition: all 0.5s ease; cursor: not-allowed; }

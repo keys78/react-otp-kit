@@ -1,5 +1,14 @@
+import AutoSubmitPage from "../components/examples/auto-submit/AutoSubmit";
+import AutofocusPage from "../components/examples/autofocus/Autofocus";
 import BasicUsage from "../components/examples/basic-usage/BasicUsage";
-import WithSeparators from "../components/examples/with-seperators/WithSeparators";
+import ClearButtonOptionsPage from "../components/examples/clear-button-options/ClearButtonOptions";
+import InputLengthPage from "../components/examples/input-length/InputLength";
+import CustomInputStylesPage from "../components/examples/input-styles/CustomInputStyles";
+import InputTypePage from "../components/examples/input-type/InputType";
+import PlaceholderPage from "../components/examples/placeholder/Placeholder";
+import ResendCodePage from "../components/examples/resend-code/ResendCode";
+import SeparatorsPage from "../components/examples/separators/Separators";
+import SubmitButtonOptionsPage from "../components/examples/submit-button-options/SubmitButtonOptions";
 
 const Examples = () => {
   return (
@@ -17,14 +26,17 @@ const Examples = () => {
         </p>
       </div>
       <BasicUsage />
-      <WithSeparators />
-      <div id="autofocus" className="h-[200px] w-full bg-red-300 mt-[800px]">
-        <h1>Auto focus</h1>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis
-        distinctio cum pariatur ipsam perspiciatis nostrum quia eligendi
-        nesciunt minus qui illo neque voluptates voluptate, earum eum repellat
-        temporibus numquam. Facilis.
-      </div>
+      <SeparatorsPage />
+      <CustomInputStylesPage />
+      <InputTypePage />
+      <InputLengthPage />
+      <AutofocusPage />
+      <PlaceholderPage />
+      <AutoSubmitPage />
+      <SubmitButtonOptionsPage />
+      <ClearButtonOptionsPage />
+      <ResendCodePage />
+      
     </section>
   );
 };
