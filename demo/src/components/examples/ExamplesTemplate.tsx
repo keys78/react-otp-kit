@@ -55,7 +55,7 @@ const ExamplesTemplate: React.FC<ExamplesTemplateProps> = ({
             {
               label: "Code",
               content: (
-                <div className="border border-accent-1 rounded-[10px] sm:w-full max-w-[380px] relative">
+                <div className="border border-accent-1 rounded-[10px] sm:max-w-full max-w-[380px] relative">
                   <SyntaxHighlighter
                     language="jsx"
                     customStyle={customSyntaxHighlighterStyle}

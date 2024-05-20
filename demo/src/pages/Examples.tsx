@@ -18,12 +18,7 @@ const Examples = () => {
         <h2 className="sm:text-[36px] text-[24px] font-semibold pt-2 pb-3 text-accent-3">
           Examples
         </h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa autem
-          totam earum fugiat excepturi voluptate, error sit officia laudantium
-          facere, possimus amet veniam optio odio at molestiae harum iusto
-          vitae.
-        </p>
+        <p>Get started instantly with... help me complete this</p>
       </div>
       <BasicUsage />
       <SeparatorsPage />
@@ -36,7 +31,6 @@ const Examples = () => {
       <SubmitButtonOptionsPage />
       <ClearButtonOptionsPage />
       <ResendCodePage />
-      
     </section>
   );
 };
