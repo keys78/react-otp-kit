@@ -17,22 +17,18 @@ const BreadCrumbs = () => {
     paths.push(pathHash);
   }
 
-  // const navigateTo = (index: number) => {
-  //   navigate('/' + paths[index]);
-  //   setActivePath('/' + paths[index])
-  // };
-
   const navigateTo = (index: number) => {
     let path = "/" + paths[index];
     if (index === paths.length - 1 && pathHash) {
       path = `/${paths.slice(0, -1).join("/")}${location.hash}`;
     }
     navigate(path);
+    setActivePath('/' + paths[index])
+
   };
 
   useEffect(() => {
     setActivePath(location.pathname);
-    console.log(location);
   }, [location]);
 
   return (

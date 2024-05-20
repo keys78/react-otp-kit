@@ -122,7 +122,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             !isSideBar ? "mx-auto" : ""
           }`}
         >
-          { location.pathname !== '' && <BreadCrumbs /> }
+          { location.pathname !== '/' && <BreadCrumbs /> }
           {children}
         </div>
       </div>
