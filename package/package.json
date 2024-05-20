@@ -1,7 +1,7 @@
 {
   "name": "react-otp-kit",
   "private": false,
-  "version": "0.1.0",
+  "version": "1.1.0",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -49,6 +49,6 @@
   "homepage": "https://react-otp-kit.vercel.app/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/keys78/react-otp-kit/"
+    "url": "git+https://github.com/keys78/react-otp-kit/tree/main/package"
   }
 }
