@@ -96,7 +96,6 @@ const GetStarted: React.FC = () => {
 
   return (
     <section className="max-w-[800px]">
-      <p>Bread Crumbs</p>
       <h2 className="sm:text-[36px] text-[24px] font-semibold pt-2 pb-3 text-accent-3">
         Get Started
         <div className="w-[10%] h-[5px] rounded-md bg-gradient-to-r from-purple-500 to-pink-500 mt-3"></div>

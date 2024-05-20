@@ -66,6 +66,7 @@ import React, { ReactNode, useState, lazy, Suspense } from "react";
 import { useLocation } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
+import BreadCrumbs from "./BreadCrumbs";
 
 const SideNav = lazy(() => import("./SideNav")); // Lazy load SideNav
 
@@ -121,6 +122,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             !isSideBar ? "mx-auto" : ""
           }`}
         >
+          { location.pathname !== '/' && <BreadCrumbs /> }
           {children}
         </div>
       </div>

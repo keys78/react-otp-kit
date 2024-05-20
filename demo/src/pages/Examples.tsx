@@ -13,7 +13,6 @@ import SubmitButtonOptionsPage from "../components/examples/submit-button-option
 const Examples = () => {
   return (
     <section className="max-w-[800px]">
-      <p>Bread Crumbs</p>
       <div>
         <h2 className="sm:text-[36px] text-[24px] font-semibold pt-2 pb-3 text-accent-3">
           Examples
