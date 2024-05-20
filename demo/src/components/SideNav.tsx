@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import npm from "../assets/svg/npmIcon.svg";
 import github from "../assets/svg/githubIcon.svg";
 import contributors from "../assets/svg/contributorsIcon.svg";
+import { useEffect } from "react";
 
 interface NavLink {
   to: string;
@@ -28,22 +29,31 @@ const SideNav = ({ toggleSideBar }: SideNavProps) => {
   const location = useLocation();
   const hash = location.hash;
 
+  useEffect(() => {
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [hash]);
+
   const navLinks: NavLink[] = [
     { to: "/get-started", label: "Get Started" },
     { to: "/guides", label: "Guides" },
   ];
 
   const exampleLinks: ExampleLink[] = [
-    { to: "#basicusage", label: "basic usage" },
-    { to: "#numberofinputs", label: "Inputs Length" },
-    { to: "#type", label: "Inputs Type" },
-    { to: "#separators", label: "separators & Intervals" },
-    { to: "#autofocus", label: "auto focus" },
-    { to: "#placeholder", label: "Inputs Placeholder" },
+    { to: "#basicusage", label: "Basic Usage" },
+    { to: "#separators", label: "Separators & Intervals" },
     { to: "#inputstyles", label: "Custom Input Styles" },
-    { to: "#togglesubmit", label: "Submit Button Options" },
-    { to: "#clearbutton", label: "Clear Button Options" },
+    { to: "#type", label: "Input Type" },
+    { to: "#numberofinputs", label: "Input Length" },
+    { to: "#autofocus", label: "Autofocus" },
+    { to: "#placeholder", label: "Input Placeholder" },
     { to: "#autosubmit", label: "Auto Submit" },
+    { to: "#submitoptions", label: "Submit Button Options" },
+    { to: "#clearbutton", label: "Clear Button Options" },
     { to: "#resendotp", label: "Resend OTP Functions" },
   ];
 
@@ -52,25 +62,25 @@ const SideNav = ({ toggleSideBar }: SideNavProps) => {
       icon: npm,
       alt: "npm_icon",
       label: "Npm",
-      link: "https://github.com/keys78",
+      link: "https://www.npmjs.com/package/react-otp-kit",
     },
     {
       icon: github,
       alt: "github_icon",
       label: "GitHub",
-      link: "https://github.com/keys78",
+      link: "https://github.com/keys78/react-otp-kit/",
     },
     {
       icon: contributors,
       alt: "contributors_icon",
       label: "Contributors",
-      link: "https://github.com/keys78",
+      link: "https://github.com/keys78/react-otp-kit/",
     },
   ];
 
   return (
     <div className="relative xl:mr-[300px] sm:mr-[250px] mr-[300px] h-[100vh] md:pl-[70px] pl-[20px]">
-      <nav className="md:min-w-[280px] mt-24 overflow-auto fixed h-full">
+      <nav className="md:min-w-[280px] mt-24 overflow-auto fixed h-full mb-20">
         <ul className="flex flex-col space-y-6 uppercase font-semibold">
           {navLinks.map((navLink, index) => (
             <li key={index}>
@@ -116,7 +126,7 @@ const SideNav = ({ toggleSideBar }: SideNavProps) => {
           </li>
           <div className="py-4 flex flex-col space-y-4 font-normal capitalize">
             {iconLinks.map((iconLink, index) => (
-              <a href={iconLink.link} key={index}>
+              <a target="blank" href={iconLink.link} key={index}>
                 <div className="flex items-center space-x-2">
                   <img
                     src={iconLink.icon}

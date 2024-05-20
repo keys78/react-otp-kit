@@ -37,9 +37,9 @@ const ExamplesTemplate: React.FC<ExamplesTemplateProps> = ({
 
   return (
     <section id={id} className="w-full pt-20">
-      <h1 className="sm:text-[28px] text-[22px] font-bold lato text-accent-3">
+      <h3 className="sm:text-[24px] text-[20px] font-normal text-accent-3">
         {title}
-      </h1>
+      </h3>
       <div className="pt-2 mb-6 leading-7">{description}</div>
       <>
         <Tabs
@@ -47,7 +47,7 @@ const ExamplesTemplate: React.FC<ExamplesTemplateProps> = ({
             {
               label: "Preview",
               content: (
-                <div className="relative h-[400px] w-full bg-accent-7 rounded-md border border-accent-1 flex items-center justify-center">
+                <div className="relative min-h-[400px] px-4 py-6 sm:max-w-full max-w-[380px] overflow-scroll bg-accent-7 rounded-md border border-accent-1 flex items-center justify-center">
                   {templateContent}
                 </div>
               ),
@@ -55,7 +55,7 @@ const ExamplesTemplate: React.FC<ExamplesTemplateProps> = ({
             {
               label: "Code",
               content: (
-                <div className="border border-accent-1 rounded-[10px] relative">
+                <div className="border border-accent-1 rounded-[10px] sm:max-w-full max-w-[380px] relative">
                   <SyntaxHighlighter
                     language="jsx"
                     customStyle={customSyntaxHighlighterStyle}
