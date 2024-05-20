@@ -6,7 +6,7 @@ A lightweight and versatile component designed to simplify the implementation of
 
 ![react-otp-kit demo](demo.gif)
 
-![Live Demo](https://react-otp-kit.vercel.app/examples)
+[Live Demo](https://react-otp-kit.vercel.app/examples)
 
 ## Installation
 
