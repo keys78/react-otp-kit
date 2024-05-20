@@ -47,7 +47,7 @@ const ExamplesTemplate: React.FC<ExamplesTemplateProps> = ({
             {
               label: "Preview",
               content: (
-                <div className="relative min-h-[400px] px-4 py-6 w-full bg-accent-7 rounded-md border border-accent-1 flex items-center justify-center">
+                <div className="relative min-h-[400px] px-4 py-6 sm:max-w-full max-w-[380px] overflow-scroll bg-accent-7 rounded-md border border-accent-1 flex items-center justify-center">
                   {templateContent}
                 </div>
               ),
@@ -55,7 +55,7 @@ const ExamplesTemplate: React.FC<ExamplesTemplateProps> = ({
             {
               label: "Code",
               content: (
-                <div className="border border-accent-1 rounded-[10px] relative">
+                <div className="border border-accent-1 rounded-[10px] sm:w-full max-w-[380px] relative">
                   <SyntaxHighlighter
                     language="jsx"
                     customStyle={customSyntaxHighlighterStyle}

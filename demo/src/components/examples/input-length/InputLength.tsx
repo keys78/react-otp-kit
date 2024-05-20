@@ -41,11 +41,11 @@ const TemplateInputLength = () => {
           type={"number"}
           autoFocus={false}
         />
-        <p className="pb-2 text-center">7 inputs</p>
+        <p className="pb-2 text-center">3 inputs</p>
         <OtpKit
           value={otp}
           onChange={handleChange}
-          numOfInputs={7}
+          numOfInputs={3}
           submitOtpButton={{ show: false }}
           type={"number"}
           autoFocus={false}

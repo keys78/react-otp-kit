@@ -235,7 +235,7 @@ const OtpKit: React.FC<OtpKitProps> = ({
           {otp.map((digit, index) => (
             <React.Fragment key={index}>
               <input
-                type={type}
+                type={type === "number" ? "tel" : type} 
                 value={digit}
                 placeholder={placeholder}
                 onChange={(e) => handleChange(index, e)}
@@ -247,6 +247,7 @@ const OtpKit: React.FC<OtpKitProps> = ({
                   inputStyles?.generalStyles || "rok__input--defaultStyles"
                 } ${digit ? inputStyles?.onFill || "rok__defaultFill" : ""}`}
                 ref={(el) => (inputRefs.current[index] = el)}
+                inputMode={type === "number" ? "numeric" : undefined}
                 autoComplete="one-time-code" //for SMS mobile suggestions
                 aria-label={`Digit ${index + 1}`}
               />
