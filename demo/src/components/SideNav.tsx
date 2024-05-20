@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import npm from "../assets/svg/npmIcon.svg";
 import github from "../assets/svg/githubIcon.svg";
 import contributors from "../assets/svg/contributorsIcon.svg";
+import { useEffect } from "react";
 
 interface NavLink {
   to: string;
@@ -27,6 +28,15 @@ interface SideNavProps {
 const SideNav = ({ toggleSideBar }: SideNavProps) => {
   const location = useLocation();
   const hash = location.hash;
+
+  useEffect(() => {
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [hash]);
 
   const navLinks: NavLink[] = [
     { to: "/get-started", label: "Get Started" },

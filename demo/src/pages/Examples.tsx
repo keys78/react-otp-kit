@@ -17,8 +17,14 @@ const Examples = () => {
       <div>
         <h2 className="sm:text-[36px] text-[24px] font-semibold pt-2 pb-3 text-accent-3">
           Examples
+          <div className="w-[10%] h-[5px] rounded-md bg-gradient-to-r from-purple-500 to-pink-500 mt-3"></div>
         </h2>
-        <p>Get started instantly with... help me complete this</p>
+        <p className="leading-8 -mb-10">
+          Get started instantly with a collection of example components. Each
+          example demonstrates different features and usage scenarios of the OTP
+          Kit component, allowing you to quickly understand how to integrate and
+          customize it for your projects.
+        </p>
       </div>
       <BasicUsage />
       <SeparatorsPage />
