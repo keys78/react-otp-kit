@@ -1,5 +1,14 @@
+import AutoSubmitPage from "../components/examples/auto-submit/AutoSubmit";
+import AutofocusPage from "../components/examples/autofocus/Autofocus";
 import BasicUsage from "../components/examples/basic-usage/BasicUsage";
-import WithSeparators from "../components/examples/with-seperators/WithSeparators";
+import ClearButtonOptionsPage from "../components/examples/clear-button-options/ClearButtonOptions";
+import InputLengthPage from "../components/examples/input-length/InputLength";
+import CustomInputStylesPage from "../components/examples/input-styles/CustomInputStyles";
+import InputTypePage from "../components/examples/input-type/InputType";
+import PlaceholderPage from "../components/examples/placeholder/Placeholder";
+import ResendCodePage from "../components/examples/resend-code/ResendCode";
+import SeparatorsPage from "../components/examples/separators/Separators";
+import SubmitButtonOptionsPage from "../components/examples/submit-button-options/SubmitButtonOptions";
 
 const Examples = () => {
   return (
@@ -8,23 +17,26 @@ const Examples = () => {
       <div>
         <h2 className="sm:text-[36px] text-[24px] font-semibold pt-2 pb-3 text-accent-3">
           Examples
+          <div className="w-[10%] h-[5px] rounded-md bg-gradient-to-r from-purple-500 to-pink-500 mt-3"></div>
         </h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa autem
-          totam earum fugiat excepturi voluptate, error sit officia laudantium
-          facere, possimus amet veniam optio odio at molestiae harum iusto
-          vitae.
+        <p className="leading-8 -mb-10">
+          Get started instantly with a collection of example components. Each
+          example demonstrates different features and usage scenarios of the OTP
+          Kit component, allowing you to quickly understand how to integrate and
+          customize it for your projects.
         </p>
       </div>
       <BasicUsage />
-      <WithSeparators />
-      <div id="autofocus" className="h-[200px] w-full bg-red-300 mt-[800px]">
-        <h1>Auto focus</h1>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis
-        distinctio cum pariatur ipsam perspiciatis nostrum quia eligendi
-        nesciunt minus qui illo neque voluptates voluptate, earum eum repellat
-        temporibus numquam. Facilis.
-      </div>
+      <SeparatorsPage />
+      <CustomInputStylesPage />
+      <InputTypePage />
+      <InputLengthPage />
+      <AutofocusPage />
+      <PlaceholderPage />
+      <AutoSubmitPage />
+      <SubmitButtonOptionsPage />
+      <ClearButtonOptionsPage />
+      <ResendCodePage />
     </section>
   );
 };
