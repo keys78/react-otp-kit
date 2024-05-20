@@ -60,6 +60,7 @@ const TemplateInputType = () => {
         onChange={handleChange}
         type={"number"}
         submitOtpButton={{ show: false }}
+        autoFocus={false}
       />
       <p className="pb-2">Text / Mixed</p>
       <OtpKit
@@ -67,6 +68,7 @@ const TemplateInputType = () => {
         onChange={handleChange}
         type={"text"}
         submitOtpButton={{ show: false }}
+        autoFocus={false}
       />
       <p className="pb-2">Password</p>
       <OtpKit

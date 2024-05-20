@@ -67,8 +67,9 @@ const TemplateSubmitOptions = () => {
         submitOtpButton={{
           show: true,
           text: "Whatever Name",
-          className:"whatever-classes"
+          className: "whatever-classes",
         }}
+        autoFocus={false}
       />
       <span className="absolute top-5 left-5 lato font-semibold">
         OTP Value: {otp ? otp : "Awaiting triggers..."}

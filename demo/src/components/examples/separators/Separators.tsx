@@ -73,6 +73,7 @@ const TemplateSeparators = () => {
           className: "//add separator styles here",
         }}
         submitOtpButton={{ show: false }}
+        autoFocus={false}
       />
       <OtpKit
         value={otp}
@@ -85,6 +86,7 @@ const TemplateSeparators = () => {
           className: "//add separator styles here",
         }}
         submitOtpButton={{ show: false }}
+        autoFocus={false}
       />
       <OtpKit
         value={otp}

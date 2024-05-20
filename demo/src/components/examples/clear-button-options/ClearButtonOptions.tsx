@@ -64,6 +64,7 @@ const TemplateClearButtonOptions = () => {
           text: "Clear",
           className: "bg-red-500 text-white",
         }}
+        autoFocus={false}
       />
       <span className="absolute top-5 left-5 lato font-semibold">
         OTP Value: {otp ? otp : "Awaiting input..."}
