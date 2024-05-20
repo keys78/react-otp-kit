@@ -1,8 +1,8 @@
 # react-otp-kit
 
-[![npm](https://img.shields.io/npm/v/react-otp-kit)]() [![license](https://img.shields.io/npm/l/react-otp-kit)]() [![issues](https://img.shields.io/github/issues/keys78/react-otp-kit)]()
-
 A lightweight and versatile component designed to simplify the implementation of OTP (One-Time Password) input fields in React applications for desktop and mobile.
+
+[![npm](https://img.shields.io/npm/v/react-otp-kit)]() [![license](https://img.shields.io/npm/l/react-otp-kit)]() [![issues](https://img.shields.io/github/issues/keys78/react-otp-kit)]()
 
 ![react-otp-kit demo](demo.gif)
 
@@ -82,6 +82,9 @@ export default App;
 | resendOtpButton.text             | `string`              | No       | `Resend code`        | Text to display on the resend OTP button.                                              | Stable |
 | resendOtpButton.className        | `string`              | No       | `rok__resend_button` | CSS class for styling the resend OTP button.                                           | Stable |
 | resendOtpButton.responseData     | `(data: any) => void` | No       | -                    | Callback function to handle the response data from the OTP generation function or API. | Stable |
+
+
+
 
 ## ResendCode Button & Timer
 

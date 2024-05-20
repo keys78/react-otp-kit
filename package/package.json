@@ -44,7 +44,9 @@
     "react-otp-ui",
     "kit",
     "one-time-password",
-    "react"
+    "passcode",
+    "code",
+    "input"
   ],
   "homepage": "https://react-otp-kit.vercel.app/",
   "repository": {
