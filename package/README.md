@@ -5,6 +5,7 @@
 A lightweight and versatile component designed to simplify the implementation of OTP (One-Time Password) input fields in React applications for desktop and mobile.
 
 ![react-otp-kit demo](demo.gif)
+![react-otp-kit demo](https://hackmd.io/_uploads/Syi0cCdmA.gif)
 
 [Live Demo](https://react-otp-kit.vercel.app/examples)
 
