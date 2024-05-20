@@ -35,6 +35,7 @@ const GetStarted: React.FC = () => {
   const code = `
   import { useState } from "react";
   import { OtpKit } from "react-otp-kit";
+  import "react-otp-kit/dist/styles.css";
 
   function App() {
     const [otp, setOtp] = useState("");
@@ -55,7 +56,7 @@ const GetStarted: React.FC = () => {
   };
 
   export default App;
-  `
+  `;
 
   const renderInstallationTab = (packageManager: string) => {
     return (
@@ -140,7 +141,30 @@ const GetStarted: React.FC = () => {
             },
           ]}
         />
-      </div>{" "}
+      </div>{" "} <br />
+      <div className="rounded-md relative">
+        <SyntaxHighlighter
+          language="jsx"
+          style={tomorrowNight}
+          customStyle={customSyntaxHighlighterStyle}
+        >
+          {code}
+        </SyntaxHighlighter>
+        <button
+          title={!showCheckUsage ? "Copy" : "Copied"}
+          className="absolute top-5 sm:right-10 right-4"
+          onClick={() => handleDemoCopyClick(code)}
+        >
+          {!showCheckUsage && <img src={copyIcon} alt="Copy" />}
+        </button>
+        {showCheckUsage && (
+          <img
+            className="absolute top-5 sm:right-10 right-4"
+            src={checkIcon}
+            alt="Copied"
+          />
+        )}
+      </div>
       <br />
       <div className="mb-6">
         <h3 className="sm:text-[24px] text-[20px] font-normal text-accent-3">

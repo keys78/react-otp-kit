@@ -57,6 +57,7 @@ const TemplateAutofocus = () => {
 export const autoFocusTemp = `
 import { useState } from "react";
 import { OtpKit } from "react-otp-kit";
+import "react-otp-kit/dist/styles.css";
 
 function App() {
   const [otp, setOtp] = useState("");

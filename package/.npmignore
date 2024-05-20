@@ -15,4 +15,3 @@ tsup.config.ts
 vite.config.ts
 main.tsx
 CONTRIBUTING.md
-demo.gif

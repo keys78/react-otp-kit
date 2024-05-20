@@ -1,4 +1,4 @@
-import './index.css'
+import './styles.css'
 import OtpKit, { OtpKitProps, OtpKitResendCode, ResendCodeProps } from './App'
 
 export { OtpKit, OtpKitResendCode }

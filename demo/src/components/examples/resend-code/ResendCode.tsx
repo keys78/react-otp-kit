@@ -129,6 +129,7 @@ const TemplateResendCode = () => {
 export const resendCodeTemp = `
 import { useState } from "react";
 import { OtpKitResendCode } from "react-otp-kit";
+import "react-otp-kit/dist/styles.css";
 
 function App() {
    const [localOtp, setLocalOtp] = useState("");

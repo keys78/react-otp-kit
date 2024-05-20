@@ -49,6 +49,6 @@
   "homepage": "https://react-otp-kit.vercel.app/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/keys78/react-otp-kit/tree/main/package"
+    "url": "git+https://github.com/keys78/react-otp-kit/"
   }
 }

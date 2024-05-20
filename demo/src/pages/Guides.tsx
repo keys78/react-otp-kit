@@ -24,15 +24,9 @@ const Guides: React.FC = () => {
           such as <code>value</code>, <code>onChange</code>, <code>type</code>,{" "}
           <code>length</code>, <code>autoSubmit</code>, and more.
         </p>
-        <h4 className="text-lg font-semibold mb-2">Examples</h4>
-        <p className="mb-2 leading-8">
-          Examples of different configurations and use cases, illustrating how
-          to use the component in various scenarios.
-        </p>
-        <h4 className="text-lg font-semibold mb-2">Best Practices</h4>
-        <p className="mb-2 leading-8">
-          Tips and best practices for integrating the OTP Kit component into
-          your projects effectively and efficiently.
+        <h4 className="text-lg font-semibold mb-2">Styles</h4>
+        <p className="mb-2 leading-8"> Ensure to import the styles from the dist folder <br />
+          <code>import "react-otp-kit/dist/styles.css";</code>
         </p>
       </div>
       {/* Customization */}
