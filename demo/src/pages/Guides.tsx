@@ -9,7 +9,6 @@ const Guides: React.FC = () => {
         <div className="w-[10%] h-[5px] rounded-md bg-gradient-to-r from-purple-500 to-pink-500 mt-3"></div>
       </h2>
 
-
       {/* Usage Guide */}
       <div className="mb-6">
         <h3 className="text-xl font-semibold mb-2">Usage Guide</h3>

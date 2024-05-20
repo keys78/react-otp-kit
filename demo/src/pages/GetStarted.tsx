@@ -66,7 +66,7 @@ const GetStarted: React.FC = () => {
           style={tomorrowNight}
         >
           {packageManager === "npm"
-            ? "npm install react-otp-kit"
+            ? "npm install --save react-otp-kit"
             : "yarn add react-otp-kit"}
         </SyntaxHighlighter>
         <button
@@ -75,7 +75,7 @@ const GetStarted: React.FC = () => {
           onClick={() =>
             handleCopyClick(
               packageManager === "npm"
-                ? "npm install react-otp-kit"
+                ? "npm install --save react-otp-kit"
                 : "yarn add react-otp-kit"
             )
           }
