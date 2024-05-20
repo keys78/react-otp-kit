@@ -1,7 +1,7 @@
 {
   "name": "react-otp-kit",
   "private": false,
-  "version": "1.2.1",
+  "version": "1.2.3",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
