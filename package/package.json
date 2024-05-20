@@ -1,7 +1,7 @@
 {
   "name": "react-otp-kit",
   "private": false,
-  "version": "1.2.4",
+  "version": "1.2.6",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -44,7 +44,9 @@
     "react-otp-ui",
     "kit",
     "one-time-password",
-    "react"
+    "passcode",
+    "code",
+    "input"
   ],
   "homepage": "https://react-otp-kit.vercel.app/",
   "repository": {
