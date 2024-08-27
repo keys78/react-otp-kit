@@ -239,7 +239,6 @@ const OtpKit: React.FC<OtpKitProps> = ({
   }
 
   return (
-    <section>
       <form onSubmit={handleSubmit} className="rok__form" role="form">
         <div role="group" className="rok__input__group">
           {otp.map((digit, index) => (
@@ -290,7 +289,6 @@ const OtpKit: React.FC<OtpKitProps> = ({
           )}
         </div>
       </form>
-    </section>
   )
 }
 
