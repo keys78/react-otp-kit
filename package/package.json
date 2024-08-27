@@ -1,10 +1,15 @@
 {
   "name": "react-otp-kit",
   "private": false,
-  "version": "1.2.8",
+  "version": "1.3.1",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src/__tests__",
+    "package.json"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
